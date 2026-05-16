@@ -1,0 +1,12 @@
+Defender for Cloud has the following Defender plans:
+
+Microsoft Defender for Servers
+Microsoft Defender for Storage
+Microsoft Defender for SQL
+Microsoft Defender for Containers
+Microsoft Defender for App Service
+Microsoft Defender for Key Vault
+Microsoft Defender for Resource Manager
+Microsoft Defender for DNS
+Microsoft Defender for open-source relational databases
+Microsoft Defender for Azure Cosmos DB

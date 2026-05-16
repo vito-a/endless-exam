@@ -1,0 +1,13 @@
+.env
+.DS_Store
+__pycache__/
+.pytest_cache/
+.venv/
+bills/*
+!bills/.gitkeep
+reports/*
+!reports/.gitkeep
+plans/
+*_progress.json
+setup.txt
+data/setup.txt
