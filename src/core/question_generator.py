@@ -82,6 +82,62 @@ class QuestionGenerator:
             print(f"Failed to generate valid JSON after {MAX_GENERATION_RETRIES} attempts.")
             return []
 
+    async def distill_questions(self, questions_batch, num_per_block=7):
+        """Meticulously filters and refines a batch of questions to remove repetition and fluff."""
+        async with self.generation_lock:
+            print(f"Distilling {len(questions_batch)} questions...")
+            
+            prompt = (
+                f"You are a world-class certification editor. Below is a list of practice questions for {self.model.upper()}. "
+                "Your goal is to perform 'Question Distillation':\n"
+                "1. REMOVE REPETITION: Many concepts repeat across sections. Identify and remove near-duplicate questions.\n"
+                "2. FILTER FLUFF: Remove low-quality or overly simple questions.\n"
+                "3. REPAIR BROKEN DATA: Meticulously check for and fix 'broken' questions:\n"
+                "   - Identify and repair questions with empty, null, or incorrect answer mappings.\n"
+                "   - Clarify or remove vague, ambiguous, or nonsensical questions.\n"
+                "   - Verify that the 'answer' index correctly points to the factually accurate option.\n"
+                "   - Enrich empty or generic explanations with technical depth.\n"
+                "4. ENHANCE DEPTH: Keep only the most complex, unique, and diverse questions.\n"
+                f"5. VOLUME: Aim to preserve as many high-quality questions as possible. Do not delete unique technical content.\n"
+                f"6. STRUCTURE: Group the result into blocks of EXACTLY {num_per_block}.\n\n"
+                "Output ONLY raw JSON in this format: {\"distilled_sections\": {\"Distilled Block 1\": [questions], ...}}\n\n"
+                f"DATA TO DISTILL:\n{json.dumps(questions_batch)}"
+            )
+
+            messages = [
+                {"role": "system", "content": "You are a world-class certification editor. You always respond with valid, complete JSON."},
+                {"role": "user", "content": prompt}
+            ]
+
+            for attempt in range(MAX_GENERATION_RETRIES):
+                try:
+                    completion = await self.client.chat.completions.create(
+                        messages=messages,
+                        model=self.model,
+                        response_format={"type": "text"},
+                        temperature=0.2, # Extremely low temperature for structural integrity
+                        max_tokens=GENERATOR_MAX_TOKENS
+                    )
+                    
+                    response_content = completion.choices[0].message.content
+                    if not response_content or response_content.strip() == "":
+                        raise ValueError("Empty response from LLM")
+
+                    sanitized_content = self._sanitize_json(response_content)
+                    response = json.loads(sanitized_content)
+                    
+                    distilled = response.get("distilled_sections", {})
+                    if distilled:
+                        return distilled
+                    
+                    raise ValueError("JSON parsed but 'distilled_sections' key was missing or empty.")
+
+                except (json.JSONDecodeError, ValueError, Exception) as e:
+                    print(f"Distillation attempt {attempt + 1} failed: {e}")
+                    if attempt == MAX_GENERATION_RETRIES - 1:
+                        return {}
+                    await asyncio.sleep(2) # Brief backoff
+
     def _sanitize_json(self, content):
         """Attempts to fix common LLM JSON formatting errors."""
         # 1. Remove markdown code blocks

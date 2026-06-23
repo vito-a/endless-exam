@@ -6,7 +6,14 @@ import json
 import asyncio
 import threading
 import random
-from config.config import GENERATION_DELAY_SECONDS, NUM_QUESTIONS_TO_GENERATE
+from config.config import (
+    GENERATION_DELAY_SECONDS, 
+    NUM_QUESTIONS_TO_GENERATE,
+    DISTILLATION_BUFFER_SECTIONS,
+    MAX_DISTILL_BATCH_SIZE,
+    ENABLE_DISTILLATION
+)
+import time
 import os
 
 class PracticeExamApp:
@@ -46,6 +53,9 @@ class PracticeExamApp:
         self.current_q_idx = 0
         self.score = 0
         self.section_score = 0
+        self.start_time = time.time()
+        self.generation_run_counter = 0
+        self.distillation_durations = []
         self.all_results = {}
 
         # Styles
@@ -173,8 +183,13 @@ class PracticeExamApp:
         self.btn_submit.config(state="normal")
         self.btn_next.config(state="disabled")
 
-        for i, option in enumerate(q_data["options"]):
-            self.radios[i].config(text=option, fg="black", state="normal")
+        # Handle dynamic number of options and prevent IndexError
+        for i, rb in enumerate(self.radios):
+            if i < len(q_data["options"]):
+                rb.config(text=q_data["options"][i], fg="black", state="normal")
+                rb.pack(anchor="w", pady=5)
+            else:
+                rb.pack_forget()
 
     def submit_answer(self):
         if self.var_choice.get() == -1: return
@@ -195,7 +210,8 @@ class PracticeExamApp:
             res = "✅ Correct! "
         else:
             self.radios[selected_idx].config(fg="red")
-            self.radios[correct_idx].config(fg="green")
+            if correct_idx < len(self.radios):
+                self.radios[correct_idx].config(fg="green")
             res = "❌ Incorrect. "
 
         self.lbl_explanation.config(text=res + q_data["explanation"])
@@ -208,8 +224,13 @@ class PracticeExamApp:
                 self.load_question()
             else:
                 # Reached end of current section in endless mode
+                sec_name = self.sections[self.current_section_idx]
+                self.all_results[sec_name] = {"correct": self.section_score, "total": len(self.practice_data[sec_name])}
+                self._print_stats()
+
                 self.current_section_idx += 1
                 self.current_q_idx = 0
+                self.section_score = 0
                 self._reload_endless_data(force_load=True)
         else:
             self.current_q_idx += 1
@@ -219,6 +240,40 @@ class PracticeExamApp:
                 self.load_question()
             else:
                 self.finalize_section()
+
+    def _print_stats(self):
+        """Calculates and prints exam progress statistics to the console."""
+        elapsed_min = (time.time() - self.start_time) / 60
+        if elapsed_min <= 0: elapsed_min = 0.01  # Prevent division by zero
+
+        # Calculate base statistics
+        aa_total_q = sum(len(v) for v in self.practice_data.values())
+        bb_sections_passed = len(self.all_results)
+        cc_questions_passed = sum(res['total'] for res in self.all_results.values())
+
+        if cc_questions_passed == 0: return
+
+        tempo_passing = cc_questions_passed / elapsed_min
+        ee_est_finish_time = aa_total_q / tempo_passing
+
+        stats_msg = (f"{aa_total_q} questions total in current data file, "
+                     f"{bb_sections_passed} sections of total {cc_questions_passed} questions passed in {elapsed_min:.1f} minutes, "
+                     f"with the current tempo you will finish an exam in {ee_est_finish_time:.1f} minutes")
+
+        if self.is_endless_mode:
+            ff_sections_gen = self.generation_run_counter
+            gg_questions_gen = ff_sections_gen * NUM_QUESTIONS_TO_GENERATE
+            hh_gen_min = elapsed_min # Generation starts with the app
+            
+            stats_msg += f"\n{ff_sections_gen} sections of total {gg_questions_gen} questions generated in {hh_gen_min:.1f} minutes."
+            
+            tempo_gen = gg_questions_gen / hh_gen_min
+            if tempo_gen > tempo_passing:
+                stats_msg += "\nWith the current tempo exam will be endless"
+            else:
+                stats_msg += f"\nYour LLM generator needs to generate faster, otherwise you will run out of questions and finish Endless Exam in {ee_est_finish_time:.1f} minutes"
+
+        print(f"\n{'='*60}\n{stats_msg}\n{'='*60}\n")
 
     def _handle_empty_section(self):
         """Handles cases where a section might be empty (e.g., after reloading endless data)."""
@@ -256,24 +311,37 @@ class PracticeExamApp:
 
         # Detect transition from initial random pool (blocks of 7) to AI file
         is_from_random_pool = self.sections and self.sections[0].startswith("Random Block")
-        
-        self.practice_data = new_data
-        self._randomize_options()
-        self.sections = list(self.practice_data.keys())
-        
-        # Shuffle blocks for endless mode
-        random.shuffle(self.sections)
-        
+
         if is_from_random_pool:
+            self.practice_data = new_data
+            self._randomize_options()
+            self.sections = list(self.practice_data.keys())
+            # Initial shuffle for variety when starting the AI file
+            random.shuffle(self.sections)
             # Reset to start of the AI file when transitioning from the initial pool
             self.current_section_idx = 0
             self.current_q_idx = 0
             self.load_question()
         elif self.current_section_idx < len(self.sections):
-            # Only trigger UI update if we are moving to a new section (forced)
-            # or if we were previously stuck on the waiting screen.
-            if force_load or self.lbl_question.cget("text") == "Waiting for AI to generate more questions...":
-                self.load_question()
+            # Additive merge to preserve session progress and avoid repeating finished sections
+            existing_sections = set(self.sections)
+            for sec_name, questions in new_data.items():
+                if sec_name not in existing_sections:
+                    # Randomize content for the new section before tracking it
+                    random.shuffle(questions)
+                    for q in questions:
+                        correct_text = q["options"][q["answer"]]
+                        random.shuffle(q["options"])
+                        q["answer"] = q["options"].index(correct_text)
+                    
+                    self.practice_data[sec_name] = questions
+                    self.sections.append(sec_name)
+            
+            if self.current_section_idx < len(self.sections):
+                # Only trigger UI update if we are moving to a new section (forced)
+                # or if we were previously stuck on the waiting screen.
+                if force_load or self.lbl_question.cget("text") == "Waiting for AI to generate more questions...":
+                    self.load_question()
         else:
             # Still no more sections available in the file
             self._handle_empty_section()
@@ -282,6 +350,8 @@ class PracticeExamApp:
         sec_name = self.sections[self.current_section_idx]
         self.all_results[sec_name] = {"correct": self.section_score, "total": len(self.practice_data[sec_name])}
         
+        self._print_stats()
+
         messagebox.showinfo("Section Complete", f"Score: {self.section_score}/{len(self.practice_data[sec_name])}")
         
         self.current_section_idx += 1
@@ -345,40 +415,78 @@ class PracticeExamApp:
         """Runs in a separate thread to continuously generate questions."""
         asyncio.run(self._async_question_generation_loop())
 
+
     async def _async_question_generation_loop(self):
         from src.core.data_loader import DataManager # Import here to avoid circular dependency
         self.generation_run_counter = 0
         while True:
             # Check if the exam window is still open
             if not self.root.winfo_exists():
-                print("Exam window closed, stopping question generation thread.")
                 break
+
+            # Velocity Tracking
+            elapsed_min = (time.time() - self.start_time) / 60
+            cc_questions_passed = sum(res['total'] for res in self.all_results.values())
+            tempo_passing = cc_questions_passed / max(0.1, elapsed_min)
+            
+            total_q_in_file = sum(len(v) for v in self.practice_data.values())
+            q_remaining_to_answer = total_q_in_file - cc_questions_passed
+            
+            # Distillation Prediction Logic
+            avg_distill_time = sum(self.distillation_durations) / len(self.distillation_durations) if self.distillation_durations else 5.0
+            # Safety Gap: Enough questions for the user to answer while we distill, plus the buffer
+            safety_threshold = (tempo_passing * avg_distill_time) + (DISTILLATION_BUFFER_SECTIONS * NUM_QUESTIONS_TO_GENERATE)
+            
+            # Decide: Distill or Generate?
+            if ENABLE_DISTILLATION and q_remaining_to_answer > safety_threshold and self.generation_run_counter > 5:
+                # START DISTILLATION
+                print("--- Starting Distillation Mode ---")
+                d_start = time.time()
+                
+                # Flatten all current data for batching
+                all_questions = []
+                for sec_qs in self.practice_data.values():
+                    all_questions.extend(sec_qs)
+                
+                # Split into batches to respect context window (128k is huge, but we batch for reliability)
+                distilled_results = {}
+                generator = DataManager.get_question_generator()
+                
+                for i in range(0, len(all_questions), MAX_DISTILL_BATCH_SIZE):
+                    batch = all_questions[i : i + MAX_DISTILL_BATCH_SIZE]
+                    batch_result = await generator.distill_questions(batch, NUM_QUESTIONS_TO_GENERATE)
+                    
+                    if batch_result:
+                        distilled_results.update(batch_result)
+                    else:
+                        # FAIL-SAFE: If distillation failed, re-insert original batch 
+                        # as a fallback so we don't lose 200+ questions.
+                        print(f"Warning: Batch {i//MAX_DISTILL_BATCH_SIZE} failed. Falling back to original data for this batch.")
+                        fallback_name = f"Original Batch {i//MAX_DISTILL_BATCH_SIZE} (Distillation Failed)"
+                        distilled_results[fallback_name] = batch
+                
+                if distilled_results:
+                    DataManager.overwrite_endless_file(self.exam_tag, distilled_results)
+                    self.distillation_durations.append((time.time() - d_start) / 60)
+                    # Reload UI data silently
+                    self.root.after(100, self._reload_endless_data)
+                
+                await asyncio.sleep(GENERATION_DELAY_SECONDS * 2) # Distillation is heavy, wait longer
+                continue
 
             # Get some context from current questions to avoid duplicates
             current_questions_context = []
-            for section in self.practice_data.values():
-                current_questions_context.extend(section)
-            
-            # Only pass a few questions as context to save tokens
-            recent_questions_for_context = random.sample(current_questions_context, min(5, len(current_questions_context)))
+            # Take questions from the last few sections for context
+            all_sections = list(self.practice_data.values())
+            if all_sections:
+                for sec_qs in all_sections[-2:]:
+                    current_questions_context.extend(sec_qs)
 
+            await DataManager.generate_and_append_questions(self.exam_tag, current_questions_context)
             self.generation_run_counter += 1
-            print(f"Endless Exam: Starting generation run {self.generation_run_counter} for {self.exam_tag}...")
-            await DataManager.generate_and_append_questions(
-                self.exam_tag,
-                existing_questions_context=recent_questions_for_context,
-                num_questions=NUM_QUESTIONS_TO_GENERATE
-            )
-            
-            # After generating, if the current section is empty, try to reload
-            # This handles the initial empty state or if user finished all questions
-            try:
-                if self.current_section_idx >= len(self.sections) or self.lbl_question.cget("text") == "Waiting for AI to generate more questions...":
-                    self.root.after(100, self._reload_endless_data)
-            except Exception:
-                pass
 
-            await asyncio.sleep(GENERATION_DELAY_SECONDS) # Pause between runs
+            # Throttle the loop to prevent high CPU usage
+            await asyncio.sleep(GENERATION_DELAY_SECONDS)
 
     def _on_closing(self):
         """Handles the window closing event for endless mode."""

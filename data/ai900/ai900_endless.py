@@ -5,6 +5,164 @@ EXAM_TAG = "ai900"
 EXAM_TITLE = "AI900: Endless AI Exam"
 
 PRACTICE_DATA = {
+    "AI Generated Section 1778712347": [
+        {
+            "q": "In the Azure Bot Framework, which Activity type signals that the bot is currently processing a response?",
+            "options": [
+                "Event",
+                "Message",
+                "Typing",
+                "Ping"
+            ],
+            "answer": 2,
+            "explanation": "The Typing activity informs clients that the bot is in a 'thinking' state, allowing UI implementations to display a typing indicator while asynchronous operations such as calling external services or querying a database complete. It does not carry payload data; it merely signals processing."
+        },
+        {
+            "q": "In Azure Machine Learning, what is the primary role of a Dataset?",
+            "options": [
+                "Provides data for model training or evaluation",
+                "Handles deployment endpoints",
+                "Defines compute resources",
+                "Manages model weights"
+            ],
+            "answer": 0,
+            "explanation": "A Dataset in Azure Machine Learning references data stored in Azure Blob Storage, Azure Files, or external sources, enabling pipelines to access and reuse the same data across multiple experiments without duplicating it. Datasets support versioning and mounting, facilitating reproducible training workflows."
+        },
+        {
+            "q": "Which Azure AI service can be used to create custom neural text\u2011to\u2011speech voices?",
+            "options": [
+                "Azure Translator",
+                "Azure Language Understanding",
+                "Azure Speech Service",
+                "Azure Computer Vision"
+            ],
+            "answer": 2,
+            "explanation": "Azure Speech Service's Custom Voice feature allows developers to train a neural text\u2011to\u2011speech model using proprietary voice data, producing synthetic speech that matches a specific timbre, accent, or speaking style. This involves providing audio recordings, defining a voice signature, and deploying the model as a speech synthesis endpoint."
+        },
+        {
+            "q": "Which Azure AI service offers content moderation for detecting adult or suggestive material?",
+            "options": [
+                "Image Analysis",
+                "Face API",
+                "Speech Service",
+                "Content Moderator"
+            ],
+            "answer": 3,
+            "explanation": "Azure Content Moderator analyzes both images and text to detect adult, racy, or violent content. It returns a moderation score and metadata (e.g., bounding boxes, confidence) that can be used to filter or flag content in downstream workflows, supporting compliance and safe user experiences."
+        },
+        {
+            "q": "What is the main capability of Azure Cognitive Search?",
+            "options": [
+                "Detects facial attributes",
+                "Synthesizes speech from text",
+                "Provides full\u2011text search over unstructured documents",
+                "Performs optical character recognition on images"
+            ],
+            "answer": 2,
+            "explanation": "Azure Cognitive Search combines search engine capabilities with AI enrichment, providing full\u2011text search over unstructured documents, PDFs, images, and other content. It supports linguistic analysis, fuzzy matching, and can be extended with skills such as OCR, entity recognition, and image analysis to index and query diverse data."
+        },
+        {
+            "q": "Which principle of Responsible AI focuses on preventing unfair outcomes across different demographic groups?",
+            "options": [
+                "Accountability",
+                "Fairness",
+                "Transparency",
+                "Privacy"
+            ],
+            "answer": 1,
+            "explanation": "The Fairness principle in Microsoft's Responsible AI framework focuses on identifying and mitigating biases that could lead to unfair outcomes across demographic groups. This includes auditing training data for representation imbalances, applying fairness metrics, and adjusting models to ensure equitable performance."
+        },
+        {
+            "q": "Which Azure AI service provides real\u2011time speech\u2011to\u2011text transcription?",
+            "options": [
+                "Azure Face API",
+                "Azure Translator",
+                "Azure Speech Service",
+                "Azure Computer Vision"
+            ],
+            "answer": 2,
+            "explanation": "Azure Speech Service provides real\u2011time speech\u2011to\u2011text transcription with low latency, converting spoken audio into textual form. It supports acoustic and language models, speaker diarization, and can be used for live captioning, voice assistants, and command\u2011and\u2011control applications."
+        }
+    ],
+    "Distilled Block 2": [
+        {
+            "q": "Which Azure Cognitive Search capability supports similarity search using vector embeddings?",
+            "options": [
+                "Full\u2011text search",
+                "Vector Search",
+                "Geospatial search",
+                "Faceted navigation"
+            ],
+            "answer": 1,
+            "explanation": "Vector Search in Azure Cognitive Search indexes vector embeddings derived from text, images, or other data, enabling similarity search that retrieves items with semantically similar content. This is useful for semantic search, recommendation, and AI\u2011driven query understanding."
+        },
+        {
+            "q": "Which Azure AI service provides facial detection, emotion recognition, and age estimation?",
+            "options": [
+                "Content Moderator",
+                "Speech Service",
+                "Computer Vision",
+                "Translator"
+            ],
+            "answer": 2,
+            "explanation": "Azure Computer Vision's Face API detects faces in images, extracts attributes such as age, gender, and facial landmarks, and can infer emotions (e.g., joy, anger) based on facial expression patterns. These capabilities are used in personalization, accessibility, and security applications."
+        },
+        {
+            "q": "Which Azure AI service provides personalized product recommendations based on user behavior?",
+            "options": [
+                "Azure Personalizer",
+                "Azure Cognitive Search",
+                "Azure Data Factory",
+                "Azure Synapse Analytics"
+            ],
+            "answer": 0,
+            "explanation": "Azure Personalizer uses reinforcement learning to select the most relevant item to present to a user from a set of candidates, adapting to user feedback and context. It helps implement contextual recommendations in scenarios like content feed ordering or product suggestion."
+        },
+        {
+            "q": "In Azure Machine Learning, which compute target allows you to deploy ML models as containerized inference endpoints?",
+            "options": [
+                "Azure Kubernetes Service",
+                "Azure Batch",
+                "Azure Machine Learning Compute",
+                "Azure Container Instances"
+            ],
+            "answer": 3,
+            "explanation": "Azure Container Instances (ACI) can host Docker containers that run model inference endpoints, enabling serverless deployment of models on edge or cloud resources. ACI supports quick scaling, private networking, and integration with Azure Machine Learning for managed inference."
+        },
+        {
+            "q": "What type of AI workload can be implemented using Azure Synapse Analytics?",
+            "options": [
+                "Machine learning model training",
+                "Real\u2011time streaming",
+                "Batch analytics",
+                "All of the above"
+            ],
+            "answer": 3,
+            "explanation": "Azure Synapse Analytics provides a unified analytics service that can ingest, prepare, and manage large\u2011scale data, supporting batch and real\u2011time analytics pipelines. It can host machine learning workloads by integrating with Azure Machine Learning, enabling end\u2011to\u2011end model training and deployment within a single workspace."
+        },
+        {
+            "q": "Which Azure Cognitive Service is designed for detecting and analyzing facial expressions in images?",
+            "options": [
+                "Azure Immersive Reader",
+                "Azure Translator",
+                "Azure Face",
+                "Azure Content Moderator"
+            ],
+            "answer": 2,
+            "explanation": "Azure Face, part of Azure Computer Vision, offers facial detection, attribute analysis (e.g., age, gender), and emotion recognition by analyzing facial landmarks and expression patterns. These capabilities enable applications such as user identification, mood detection, and personalized interactions."
+        },
+        {
+            "q": "In Azure Machine Learning, which component is used to orchestrate data movement and processing activities within a pipeline?",
+            "options": [
+                "Azure Data Factory",
+                "Azure Machine Learning Compute",
+                "Azure Synapse Analytics",
+                "Azure Databricks"
+            ],
+            "answer": 0,
+            "explanation": "Azure Data Factory orchestrates data movement and transformation activities, allowing users to define pipelines that copy data between stores, apply mapping data flows, and execute custom activities. It integrates with Azure Machine Learning to trigger model training pipelines and manage data dependencies."
+        }
+    ],
     "AI Generated Section 1778869524": [
         {
             "q": "Which of the following principles of Microsoft\u2019s Responsible AI framework specifically requires that the creators and operators of an AI system be able to explain and take responsibility for its impacts?",
@@ -2009,6 +2167,1821 @@ PRACTICE_DATA = {
             ],
             "answer": 1,
             "explanation": "Auto\u2011scaling balances load and cost but may still cause cold starts without careful design."
+        }
+    ],
+    "AI Generated Section 1778958712": [
+        {
+            "q": "Which Azure service provides managed MLOps capabilities including experiment tracking and model registry?",
+            "options": [
+                "Azure Databricks",
+                "Azure Machine Learning",
+                "Azure Synapse Analytics",
+                "Azure Functions"
+            ],
+            "answer": 1,
+            "explanation": "Azure Machine Learning is the service that offers a fully managed environment for MLOps, supporting experiment tracking, model versioning, and a model registry."
+        },
+        {
+            "q": "In Azure's Responsible AI framework, which principle ensures that a model\u2019s predictions are explainable to end users?",
+            "options": [
+                "Fairness",
+                "Transparency",
+                "Accountability",
+                "Privacy"
+            ],
+            "answer": 1,
+            "explanation": "Transparency is the responsible AI principle that makes model behavior understandable and interpretable for stakeholders."
+        },
+        {
+            "q": "When training machine learning models on large binary files such as images or video, which Azure storage service is recommended?",
+            "options": [
+                "Azure Blob Storage",
+                "Azure Files",
+                "Azure Data Lake Storage Gen2",
+                "Azure SQL Database"
+            ],
+            "answer": 2,
+            "explanation": "Azure Data Lake Storage Gen2 provides scalable, high\u2011throughput storage optimized for large binary data used in model training pipelines."
+        },
+        {
+            "q": "For a highly imbalanced classification problem, which evaluation metric is preferred over simple accuracy?",
+            "options": [
+                "Precision",
+                "Recall",
+                "F1-Score",
+                "ROC-AUC"
+            ],
+            "answer": 2,
+            "explanation": "The F1\u2011Score balances precision and recall, making it more informative than accuracy when class distribution is skewed."
+        },
+        {
+            "q": "Which Azure Machine Learning capability automatically selects the best algorithm and tunes hyperparameters for a given dataset?",
+            "options": [
+                "Azure Databricks",
+                "Azure Machine Learning AutoML",
+                "Azure Functions",
+                "Azure Logic Apps"
+            ],
+            "answer": 1,
+            "explanation": "AutoML in Azure Machine Learning automates algorithm selection and hyperparameter optimization, reducing manual tuning effort."
+        },
+        {
+            "q": "When deploying a model as a real\u2011time endpoint using Azure Container Instances, which component handles request and response serialization?",
+            "options": [
+                "Model Registry",
+                "Managed Online Endpoint",
+                "Docker container",
+                "Azure Functions"
+            ],
+            "answer": 1,
+            "explanation": "The Managed Online Endpoint abstracts the underlying container and provides built\u2011in request/response handling and serialization for real\u2011time inference."
+        },
+        {
+            "q": "Which Azure service offers role\u2011based access control (RBAC) specifically to manage permissions for AI assets such as models and datasets?",
+            "options": [
+                "Azure Active Directory",
+                "Azure Policy",
+                "Azure RBAC",
+                "Azure Key Vault"
+            ],
+            "answer": 2,
+            "explanation": "Azure RBAC allows administrators to assign roles and permissions to users, groups, or service principals for Azure resources, including AI services like Azure Machine Learning."
+        }
+    ],
+    "AI Generated Section 1778958944": [
+        {
+            "q": "Which Azure component is responsible for orchestrating data movement and compute resources within an Azure Machine Learning pipeline?",
+            "options": [
+                "Azure Data Factory",
+                "Azure ML Pipelines",
+                "Azure Batch AI",
+                "Azure Logic Apps"
+            ],
+            "answer": 1,
+            "explanation": "The Azure ML Pipelines service defines, schedules, and executes workflow steps that handle dataset registration (data movement) and provision compute targets (compute resources)."
+        },
+        {
+            "q": "Which Azure AI service provides real-time speech transcription and language understanding capabilities?",
+            "options": [
+                "Azure Cognitive Services - Speech",
+                "Azure Bot Service",
+                "Azure Language Understanding (LUIS)",
+                "Azure Translator Text"
+            ],
+            "answer": 0,
+            "explanation": "The Azure Cognitive Services Speech component includes the Speech SDK for converting audio to text and can also perform real-time language understanding."
+        },
+        {
+            "q": "Which API enables you to register a model in Azure Machine Learning Model Registry and automatically create a versioned endpoint?",
+            "options": [
+                "Model Registry REST API",
+                "mlflow.log_model() SDK call",
+                "Azure Function HTTP trigger",
+                "Azure Container Instances"
+            ],
+            "answer": 0,
+            "explanation": "The Model Registry REST API (accessible via the Azure ML SDK) registers models with versioning and can expose each version as a distinct endpoint."
+        },
+        {
+            "q": "Which Azure AI service supports automated machine learning for image classification without writing extensive code?",
+            "options": [
+                "Azure Computer Vision",
+                "Azure Custom Vision",
+                "Azure Face API",
+                "Azure Video Analyzer"
+            ],
+            "answer": 1,
+            "explanation": "Azure Custom Vision is an AutoML service that lets you train custom image classifiers through a visual interface or minimal SDK code."
+        },
+        {
+            "q": "In Azure OpenAI\u2019s RLHF pipeline, which component trains the reward model that evaluates generated responses against human preferences?",
+            "options": [
+                "Prompt encoder",
+                "Reward model head",
+                "Tokenizer",
+                "Safety filter"
+            ],
+            "answer": 1,
+            "explanation": "The Reward model head is a neural network trained on preference data to output scores that guide the policy model during reinforcement learning."
+        },
+        {
+            "q": "Which Azure compute configuration allows cost\u2011effective training of large models by using spot instances while preserving checkpointing?",
+            "options": [
+                "GPU VM Scale Set with low-priority nodes",
+                "CPU-only VM with auto-scaling",
+                "CPU with reserved instances",
+                "Multi-node CPU cluster"
+            ],
+            "answer": 0,
+            "explanation": "A GPU VM Scale Set configured with low-priority (spot) nodes provides affordable GPU compute; Azure handles checkpointing of training state to survive preemptions."
+        },
+        {
+            "q": "Which metric is commonly used to detect distributional drift between training and deployment datasets in Azure Machine Learning model monitoring?",
+            "options": [
+                "Accuracy",
+                "KL divergence",
+                "Mean absolute error (MAE)",
+                "Precision@k"
+            ],
+            "answer": 1,
+            "explanation": "KL divergence measures the difference between two probability distributions, making it suitable for detecting data drift."
+        }
+    ],
+    "AI Generated Section 1778959275": [
+        {
+            "q": "Which Azure compute target is specifically designed for training large-scale deep learning models that require GPU resources?",
+            "options": [
+                "CPU-only virtual machine",
+                "Azure Kubernetes Service (AKS)",
+                "Azure Machine Learning managed compute cluster with GPU-enabled nodes",
+                "Azure Functions consumption plan"
+            ],
+            "answer": 2,
+            "explanation": "The managed compute cluster in Azure ML can provision GPU-enabled VMs for deep learning training."
+        },
+        {
+            "q": "Which Azure service offers automated data labeling capabilities for images and text to accelerate model development?",
+            "options": [
+                "Azure Data Factory",
+                "Azure Machine Learning Data Labeling",
+                "Azure Cognitive Search",
+                "Azure Purview"
+            ],
+            "answer": 1,
+            "explanation": "Azure ML Data Labeling provides tools for automatically labeling image and text data."
+        },
+        {
+            "q": "In Azure Machine Learning, what is the main purpose of a 'workspace'?",
+            "options": [
+                "Store training datasets exclusively",
+                "Provide a central hub for managing resources such as compute targets, experiments, models, and artifacts",
+                "Host real-time inference endpoints without any additional configuration",
+                "Execute batch scoring jobs automatically"
+            ],
+            "answer": 1,
+            "explanation": "The workspace is the Azure resource that groups together all ML assets like compute targets, experiments, models, and data stores."
+        },
+        {
+            "q": "In the Microsoft Responsible AI framework, which principle focuses on preventing biased outcomes in model predictions?",
+            "options": [
+                "Fairness",
+                "Transparency",
+                "Privacy",
+                "Accountability"
+            ],
+            "answer": 0,
+            "explanation": "Fairness addresses bias mitigation to ensure equitable treatment across groups."
+        },
+        {
+            "q": "Which Azure resource automatically provisions and scales compute instances for a real\u2011time inference endpoint in Azure Machine Learning?",
+            "options": [
+                "Docker container image",
+                "Azure Functions",
+                "Managed Online Endpoint",
+                "Azure Batch"
+            ],
+            "answer": 2,
+            "explanation": "The Managed Online Endpoint abstracts the underlying compute and handles automatic scaling of instances for real\u2011time inference."
+        },
+        {
+            "q": "Which Azure service offers ready\u2011to\u2011use APIs for vision, language, and speech capabilities to integrate AI functionality into applications?",
+            "options": [
+                "Azure Machine Learning",
+                "Azure Cognitive Services",
+                "Azure Data Factory",
+                "Azure Synapse Analytics"
+            ],
+            "answer": 1,
+            "explanation": "Azure Cognitive Services provides pre\u2011built APIs for vision, language, and speech tasks."
+        },
+        {
+            "q": "Which Azure AI service delivers pre\u2011trained vision capabilities such as image classification and object detection without requiring custom model development?",
+            "options": [
+                "Azure Face API",
+                "Azure Video Indexer",
+                "Azure Computer Vision",
+                "Azure Content Moderator"
+            ],
+            "answer": 2,
+            "explanation": "Azure Computer Vision offers pre\u2011trained models for image classification, object detection, and other vision tasks."
+        }
+    ],
+    "AI Generated Section 1778961257": [
+        {
+            "q": "Which Azure AI service provides automatic video indexing, content moderation, and search capabilities?",
+            "options": [
+                "Azure Media Services",
+                "Azure Video Indexer",
+                "Azure Cognitive Services \u2013 Vision",
+                "Azure Translator Text"
+            ],
+            "answer": 1,
+            "explanation": "Azure Video Indexer uses AI to extract insights such as speech transcription, face detection, and scene analysis from videos."
+        },
+        {
+            "q": "Which Azure AI service offers face detection, facial identification, and attribute analysis?",
+            "options": [
+                "Azure Face API",
+                "Azure Custom Vision",
+                "Azure Image Analyzer",
+                "Azure Computer Vision"
+            ],
+            "answer": 0,
+            "explanation": "Azure Face API is part of Azure Cognitive Services that provides pretrained models for detecting and analyzing human faces."
+        },
+        {
+            "q": "In Azure Machine Learning, what distinguishes an 'experiment' from a 'pipeline'?",
+            "options": [
+                "Experiments are used for data labeling, pipelines are used for model training.",
+                "Experiments run on remote compute, pipelines run locally.",
+                "Experiments are iterative runs of a script, pipelines are declarative workflows that can include multiple steps.",
+                "Experiments store models, pipelines store datasets."
+            ],
+            "answer": 2,
+            "explanation": "An experiment is a run of a script that can be iterated, while a pipeline is a reusable, versioned workflow that can chain multiple steps such as data preparation, training, and evaluation."
+        },
+        {
+            "q": "Which deployment type in Azure OpenAI allows you to serve models with low latency and automatic scaling?",
+            "options": [
+                "Serverless",
+                "Standard",
+                "Dedicated",
+                "Preview"
+            ],
+            "answer": 1,
+            "explanation": "The Standard deployment tier provides dedicated compute resources that ensure low\u2011latency inference and can be scaled automatically."
+        },
+        {
+            "q": "Which Azure AI service can detect anomalies in time series data without requiring labeled data?",
+            "options": [
+                "Azure Anomaly Detector",
+                "Azure Cognitive Services \u2013 Vision",
+                "Azure Translator Text",
+                "Azure Speech"
+            ],
+            "answer": 0,
+            "explanation": "Azure Anomaly Detector uses unsupervised learning models to identify outliers in streams or batches of numeric data."
+        },
+        {
+            "q": "Which Azure AI service provides automated detection and filtering of potentially harmful user\u2011generated content?",
+            "options": [
+                "Azure Content Safety",
+                "Azure Bot Service",
+                "Azure Language Understanding (LUIS)",
+                "Azure Form Recognizer"
+            ],
+            "answer": 0,
+            "explanation": "Azure Content Safety uses AI models to detect profanity, hate speech, and other unsafe content across text, images, and video."
+        },
+        {
+            "q": "Which Azure AI service helps improve reading fluency and comprehension for educational content?",
+            "options": [
+                "Azure Immersive Reader",
+                "Azure Translator Text",
+                "Azure Speech Synthesis",
+                "Azure Custom Vision"
+            ],
+            "answer": 0,
+            "explanation": "Azure Immersive Reader offers text\u2011to\u2011speech, syllable highlighting, and reading\u2011level adjustments to support literacy and comprehension."
+        }
+    ],
+    "AI Generated Section 1778961366": [
+        {
+            "q": "Which Azure Machine Learning AutoML capability supports multi-class classification out of the box?",
+            "options": [
+                "Only binary classification",
+                "Multi-class classification",
+                "Requires manual feature engineering",
+                "Limited to regression tasks"
+            ],
+            "answer": 1,
+            "explanation": "Azure AutoML automatically handles multi-class classification tasks, allowing models to predict among more than two classes without manual preprocessing."
+        },
+        {
+            "q": "Which Azure AI service provides text translation among over 70 languages and can auto\u2011detect the source language?",
+            "options": [
+                "Azure Speech Service",
+                "Azure Translator Text",
+                "Azure Language Understanding (LUIS)",
+                "Azure Text Analytics"
+            ],
+            "answer": 1,
+            "explanation": "Azure Translator Text supports translation between many languages and can automatically identify the input language, enabling seamless multilingual workflows."
+        },
+        {
+            "q": "To register a bot with the Microsoft Teams channel, which Azure service must be configured?",
+            "options": [
+                "Azure Cognitive Search",
+                "Azure Bot Service",
+                "Azure API Management",
+                "Azure Event Grid"
+            ],
+            "answer": 1,
+            "explanation": "The Azure Bot Service includes channel registration capabilities, allowing you to connect your bot to Microsoft Teams and other platforms."
+        },
+        {
+            "q": "Which Azure AI service offers content moderation for images by detecting adult or racy material?",
+            "options": [
+                "Azure Face API",
+                "Azure Content Moderator",
+                "Azure Custom Vision",
+                "Azure Immersive Reader"
+            ],
+            "answer": 1,
+            "explanation": "Azure Content Moderator provides image analysis that flags potentially inappropriate content such as adult or racy material."
+        },
+        {
+            "q": "In the Azure OpenAI embeddings API, what is the main purpose of the vector output?",
+            "options": [
+                "Compress the original text for storage",
+                "Measure semantic similarity between texts",
+                "Generate captions for images",
+                "Translate text between languages"
+            ],
+            "answer": 1,
+            "explanation": "The embedding vector represents the semantic meaning of the text, enabling tasks like similarity search and clustering."
+        },
+        {
+            "q": "Which Azure Machine Learning component integrates with MLflow to automatically log experiment metrics?",
+            "options": [
+                "Azure Compute Instances",
+                "Azure Pipelines",
+                "Azure ML Model Registry",
+                "Azure Experimentation"
+            ],
+            "answer": 3,
+            "explanation": "Azure ML's Experimentation service provides native integration with MLflow, allowing automatic logging of metrics, parameters, and artifacts."
+        },
+        {
+            "q": "Which Azure AI service delivers real\u2011time speech\u2011to\u2011text transcription with language identification?",
+            "options": [
+                "Azure Translator Text",
+                "Azure Speech Service",
+                "Azure Language Understanding (LUIS)",
+                "Azure Bot Service"
+            ],
+            "answer": 1,
+            "explanation": "Azure Speech Service includes the Speech SDK that performs real\u2011time transcription and can automatically detect the spoken language."
+        }
+    ],
+    "AI Generated Section 1778961473": [
+        {
+            "q": "Which Azure AI service provides real-time speech-to-text transcription with support for custom voice models?",
+            "options": [
+                "Azure Speech Service",
+                "Azure Translator Text",
+                "Azure Face API",
+                "Azure Language Understanding (LUIS)"
+            ],
+            "answer": 0,
+            "explanation": "Azure Speech Service includes the Speech SDK that enables real-time conversion of audio to text and offers custom voice model creation."
+        },
+        {
+            "q": "In Azure Machine Learning AutoML, which sampling strategy is used to maintain the proportion of each class in the training data?",
+            "options": [
+                "Random sampling",
+                "Stratified sampling",
+                "Cluster sampling",
+                "Convenience sampling"
+            ],
+            "answer": 1,
+            "explanation": "Stratified sampling partitions data into strata representing each class, preserving class distribution during sampling."
+        },
+        {
+            "q": "Which Azure Cognitive Services skill identifies the language of a given text document?",
+            "options": [
+                "Detect Image Modality",
+                "Detect Language",
+                "Read OCR",
+                "Analyze Image"
+            ],
+            "answer": 1,
+            "explanation": "The Detect Language skill returns the language code for the input text, enabling language detection."
+        },
+        {
+            "q": "In the Azure Bot Framework, which Activity type is used to present a set of suggested user actions?",
+            "options": [
+                "Message",
+                "Event",
+                "HttpPOST",
+                "SuggestedActions"
+            ],
+            "answer": 3,
+            "explanation": "SuggestedActions activity carries an array of CardAction objects that the bot can propose to the user."
+        },
+        {
+            "q": "Which Azure Applied AI Services prebuilt model extracts both printed and handwritten text from images?",
+            "options": [
+                "Read",
+                "Analyze Image",
+                "Object Detection",
+                "Face"
+            ],
+            "answer": 0,
+            "explanation": "The Read model performs optical character recognition (OCR) on images, supporting printed and handwritten text."
+        },
+        {
+            "q": "During Azure Machine Learning pipeline construction, which step registers a dataset sourced from an Azure Blob Storage container?",
+            "options": [
+                "RegisterDataset",
+                "CreateCompute",
+                "SubmitPipeline",
+                "RegisterModel"
+            ],
+            "answer": 0,
+            "explanation": "RegisterDataset creates a dataset definition that points to data stored in Blob Storage, making it available for downstream steps."
+        },
+        {
+            "q": "In Azure OpenAI's inference API, which parameter adjusts the randomness or creativity of the generated text?",
+            "options": [
+                "temperature",
+                "maxTokens",
+                "topP",
+                "deploymentName"
+            ],
+            "answer": 0,
+            "explanation": "Temperature controls the sampling distribution; higher values increase randomness, lower values make output more deterministic."
+        }
+    ],
+    "AI Generated Section 1778961609": [
+        {
+            "q": "Which Azure AI service provides both real-time speech-to-text conversion and the capability to apply natural language understanding to user utterances in a single workflow?",
+            "options": [
+                "Azure Speech Services",
+                "Azure Translator Text",
+                "Azure Language Understanding (LUIS)",
+                "Azure Text Analytics"
+            ],
+            "answer": 0,
+            "explanation": "Azure Speech Services delivers real-time speech-to-text transcription via the Speech SDK and can be integrated with downstream language understanding services, enabling end\u2011to\u2011end voice interaction pipelines."
+        },
+        {
+            "q": "In an Azure Machine Learning pipeline, which step type is used to register a dataset version in the Azure ML Model Registry?",
+            "options": [
+                "RegisterDataset",
+                "LogModel",
+                "RegisterModel",
+                "PublishData"
+            ],
+            "answer": 0,
+            "explanation": "The RegisterDataset step registers a dataset version with the Azure ML Model Registry, assigning it a unique version identifier and storing metadata for data lineage and reproducibility."
+        },
+        {
+            "q": "Which Azure AI resource enables you to deploy a managed online endpoint for a model, allowing real-time inference through a REST API?",
+            "options": [
+                "Azure Functions",
+                "Azure Container Apps",
+                "Azure Machine Learning Managed Online Endpoints",
+                "Azure Batch AI"
+            ],
+            "answer": 2,
+            "explanation": "Managed Online Endpoints in Azure Machine Learning provide a fully managed service to host model inference endpoints, automatically scaling and handling request routing without infrastructure management."
+        },
+        {
+            "q": "During text generation in Azure OpenAI, which sampling technique limits the probability distribution to the top K most likely tokens at each step?",
+            "options": [
+                "Temperature",
+                "Top-p (Nucleus) sampling",
+                "Top-k sampling",
+                "Max tokens"
+            ],
+            "answer": 2,
+            "explanation": "Top\u2011k sampling restricts the sampling pool to the k most probable tokens, controlling randomness while preserving coherence by preventing the model from considering low\u2011probability tokens."
+        },
+        {
+            "q": "Which Azure Cognitive Services API provides facial analysis features such as emotion detection, age estimation, and gender identification?",
+            "options": [
+                "Azure Face API",
+                "Azure Ink Recognizer",
+                "Azure Speech",
+                "Azure Translator"
+            ],
+            "answer": 0,
+            "explanation": "The Azure Face API offers pretrained models that detect facial landmarks and return attributes like age, gender, and emotion categories with confidence scores, enabling visual understanding of human expressions."
+        },
+        {
+            "q": "In Azure Synapse Analytics, which activity type is used to copy data from an Azure Blob Storage dataset to an Azure SQL Database dataset?",
+            "options": [
+                "Copy Activity",
+                "Data Flow",
+                "Mapping Data Flow",
+                "Azure Data Explorer"
+            ],
+            "answer": 0,
+            "explanation": "Copy Activity within Synapse pipelines transfers data between source and sink datasets, handling scaling, parallelism, and format conversion, making it the standard method for moving data between Blob Storage and SQL Database."
+        },
+        {
+            "q": "Which Azure AI service allows you to create a question\u2011answering bot with minimal coding by extracting Q&A pairs from unstructured documents?",
+            "options": [
+                "Azure Bot Service",
+                "Azure Language Understanding (LUIS)",
+                "Azure QnA Maker",
+                "Azure Translator Text"
+            ],
+            "answer": 2,
+            "explanation": "Azure QnA Maker builds a knowledge base by extracting question\u2011answer pairs from documents, then provides an API for bots to query, enabling conversational interfaces with little or no code."
+        }
+    ],
+    "AI Generated Section 1778961716": [
+        {
+            "q": "Which Azure Cognitive Service provides optical character recognition (OCR) capabilities?",
+            "options": [
+                "Azure Computer Vision",
+                "Azure Face API",
+                "Azure Translator Text",
+                "Azure Speech Service"
+            ],
+            "answer": 0,
+            "explanation": "Azure Cognitive Services' Computer Vision API includes the Read API which performs OCR to extract text from images."
+        },
+        {
+            "q": "In Azure Machine Learning, which step is used to log metrics such as loss and accuracy during model training?",
+            "options": [
+                "Logging",
+                "RegisterModel",
+                "CreateDataset",
+                "SubmitPipeline"
+            ],
+            "answer": 0,
+            "explanation": "The Logging step records metrics to AzureML run logs, enabling monitoring and debugging of the training process."
+        },
+        {
+            "q": "Which feature of Azure Speech Service enables real-time conversion of spoken language into written text?",
+            "options": [
+                "Speech Synthesis",
+                "Speech Recognition",
+                "Voice Matching",
+                "Intent Recognition"
+            ],
+            "answer": 1,
+            "explanation": "Speech Recognition is the core capability of Azure Speech Service that transcribes audio into text in real time, supporting custom voice models."
+        },
+        {
+            "q": "Which Bot Framework Activity type is used to send a richly formatted response containing text, images, or Adaptive Cards?",
+            "options": [
+                "Message",
+                "Event",
+                "SuggestedActions",
+                "HttpPOST"
+            ],
+            "answer": 0,
+            "explanation": "The Message activity carries the bot's response and can include attachments like Adaptive Cards, enabling richly formatted user communication."
+        },
+        {
+            "q": "Which Azure AI Search feature supports vector similarity search for embeddings?",
+            "options": [
+                "Full Text Search",
+                "Semantic Search",
+                "Faceted Navigation",
+                "Spell Check"
+            ],
+            "answer": 1,
+            "explanation": "Semantic Search uses vector embeddings to retrieve content based on semantic similarity, allowing meaning-based search beyond keyword matching."
+        },
+        {
+            "q": "Which ethical AI principle focuses on ensuring AI systems are fair and unbiased across diverse populations?",
+            "options": [
+                "Transparency",
+                "Accountability",
+                "Inclusiveness",
+                "Privacy"
+            ],
+            "answer": 2,
+            "explanation": "Inclusiveness emphasizes designing AI that is accessible and fair to all user groups, actively mitigating bias and promoting equity."
+        },
+        {
+            "q": "Which project type in Azure Custom Vision is used to classify an entire image into predefined categories?",
+            "options": [
+                "Object Detection",
+                "Image Classification",
+                "Tagging",
+                "Face Detection"
+            ],
+            "answer": 1,
+            "explanation": "Image Classification projects assign a single label to each image, making them suitable for tasks that require categorizing whole images."
+        }
+    ],
+    "AI Generated Section 1778961830": [
+        {
+            "q": "Which Azure AI service provides optical character recognition (OCR) and text extraction from images?",
+            "options": [
+                "Azure Computer Vision",
+                "Azure Face API",
+                "Azure Translator Text",
+                "Azure Speech Service"
+            ],
+            "answer": 0,
+            "explanation": "Azure Computer Vision includes OCR capabilities that extract printed or handwritten text from images."
+        },
+        {
+            "q": "In Azure Machine Learning, what component groups together multiple runs that share the same experiment name?",
+            "options": [
+                "Compute Cluster",
+                "Pipeline",
+                "Experiment",
+                "Dataset"
+            ],
+            "answer": 2,
+            "explanation": "An Experiment is a container that organizes a set of runs with a common experiment name."
+        },
+        {
+            "q": "Which Azure AI service offers custom neural text\u2011to\u2011speech synthesis with multiple voice options?",
+            "options": [
+                "Azure Speech Service",
+                "Azure Translator",
+                "Azure Face API",
+                "Azure Language Understanding"
+            ],
+            "answer": 0,
+            "explanation": "Azure Speech Service provides Text\u2011to\u2011Speech with neural voices that can be customized."
+        },
+        {
+            "q": "Which Azure Cognitive Search feature enables similarity search using embeddings?",
+            "options": [
+                "Vector Search",
+                "Semantic Ranking",
+                "Document Analysis",
+                "Anomaly Detection"
+            ],
+            "answer": 0,
+            "explanation": "Vector Search allows performing nearest\u2011neighbor queries on vector embeddings for similarity search."
+        },
+        {
+            "q": "In Azure Machine Learning pipelines, which component defines a single operation that runs on a compute target?",
+            "options": [
+                "Pipeline step",
+                "Dataset",
+                "Model",
+                "Compute target"
+            ],
+            "answer": 0,
+            "explanation": "A pipeline step encapsulates a unit of work such as running a script on a specified compute target."
+        },
+        {
+            "q": "Which principle of Responsible AI focuses on providing insight into how a model makes decisions?",
+            "options": [
+                "Transparency",
+                "Accountability",
+                "Fairness",
+                "Privacy"
+            ],
+            "answer": 0,
+            "explanation": "Transparency involves making a model's decision\u2011making process understandable to stakeholders."
+        },
+        {
+            "q": "In the Azure Bot Framework, which Activity type is used to propose a set of user actions as suggested replies?",
+            "options": [
+                "Event",
+                "Message",
+                "SuggestedActions",
+                "HttpPOST"
+            ],
+            "answer": 2,
+            "explanation": "SuggestedActions activity carries an array of CardAction objects representing suggested user responses."
+        }
+    ],
+    "AI Generated Section 1778964502": [
+        {
+            "q": "A retail company wants to predict the specific numerical value of a house's sale price based on features such as square footage, number of bedrooms, and age of the property. Which type of machine learning task is this?",
+            "options": [
+                "Classification",
+                "Regression",
+                "Clustering",
+                "Anomaly Detection"
+            ],
+            "answer": 1,
+            "explanation": "Regression is a supervised learning task used to predict a continuous numerical value (like price or temperature) based on input features."
+        },
+        {
+            "q": "You are working with a large dataset of customer transactions but you do not have any pre-defined labels. Your goal is to identify distinct groups of customers who exhibit similar purchasing behaviors for targeted marketing campaigns. Which machine learning technique should you use?",
+            "options": [
+                "Supervised Learning",
+                "Regression",
+                "Clustering",
+                "Classification"
+            ],
+            "answer": 2,
+            "explanation": "Clustering is an unsupervised learning technique used to group data points into clusters based on similarities in their features without the use of predefined labels."
+        },
+        {
+            "q": "An autonomous vehicle manufacturer is testing a new self-driving system. They need to ensure that the AI behaves predictably and maintains high performance even when encountering unexpected environmental changes, such as heavy fog or sensor obstructions. Which Responsible AI principle are they primarily addressing?",
+            "options": [
+                "Transparency",
+                "Reliability and Safety",
+                "Privacy and Security",
+                "Accountability"
+            ],
+            "answer": 1,
+            "explanation": "The Reliability and Safety principle focuses on ensuring that AI systems operate as intended and remain safe even in edge cases or unexpected conditions."
+        },
+        {
+            "q": "You are developing an application that processes customer feedback. You need to extract specific entities like 'Product Names', 'Store Locations', and 'Dates' from unstructured text reviews. Which feature of the Azure AI Language service should you implement?",
+            "options": [
+                "Sentiment Analysis",
+                "Key Phrase Extraction",
+                "Named Entity Recognition (NER)",
+                "Language Detection"
+            ],
+            "answer": 2,
+            "explanation": "Named Entity Recognition (NER) is the specific NLP task of identifying and categorizing key entities (such as names, places, or dates) within a block of text."
+        },
+        {
+            "q": "A financial institution wants to automate the process of reading scanned PDF invoices to extract specific fields like 'Invoice ID', 'Tax Amount', and 'Vendor Name'. Which Azure AI service is most specialized for this structured data extraction task?",
+            "options": [
+                "Azure AI Document Intelligence",
+                "Azure AI Vision",
+                "Azure AI Search",
+                "Azure AI Language"
+            ],
+            "answer": 0,
+            "explanation": "Azure AI Document Intelligence (formerly Form Recognizer) is specifically designed to extract text, key-value pairs, and tables from structured or semi-structured documents like invoices."
+        },
+        {
+            "q": "You have a massive dataset of historical sensor readings. You want to find the most efficient algorithm and the optimal hyperparameters for a predictive model without manually testing every possible configuration. Which Azure Machine Learning feature should you utilize?",
+            "options": [
+                "Azure Machine Learning Designer",
+                "Automated Machine Learning (AutoML)",
+                "Data Labeling",
+                "Model Deployment"
+            ],
+            "answer": 1,
+            "explanation": "Automated Machine Learning (AutoML) automates the iterative tasks of model selection and hyperparameter tuning to find the best performing model for a given dataset."
+        },
+        {
+            "q": "A developer is building a voice-controlled smart home interface. The system must be able to take the user's spoken command, convert it into text, and then interpret the intent of that text. Which sequence of Azure AI capabilities is most appropriate?",
+            "options": [
+                "Text-to-Speech followed by Sentiment Analysis",
+                "Speech-to-Text followed by Language Understanding",
+                "Computer Vision followed by Speech Translation",
+                "Language Detection followed by Text-to-Speech"
+            ],
+            "answer": 1,
+            "explanation": "The workflow requires converting audio to text (Speech-to-Text) and then analyzing the meaning/intent of that resulting text (Language Understanding or CLU)."
+        }
+    ],
+    "AI Generated Section 1778964667": [
+        {
+            "q": "A data scientist is developing a model to predict the continuous numerical value of electricity consumption for a city based on historical weather patterns and time of day. Which machine learning task is most appropriate for this scenario?",
+            "options": [
+                "Classification",
+                "Regression",
+                "Clustering",
+                "Anomaly Detection"
+            ],
+            "answer": 1,
+            "explanation": "Regression is used when the goal is to predict a continuous numerical value or a quantity. Classification is used for discrete labels, clustering for grouping unlabeled data, and anomaly detection for identifying outliers."
+        },
+        {
+            "q": "An autonomous drone manufacturer is testing its flight software. During simulations, the drone fails to maintain stability when encountering unexpected high-velocity wind gusts, potentially leading to a crash. Which principle of Responsible AI is being most directly challenged?",
+            "options": [
+                "Transparency",
+                "Inclusiveness",
+                "Reliability and Safety",
+                "Accountability"
+            ],
+            "answer": 2,
+            "explanation": "The Reliability and Safety principle dictates that AI systems should function as expected under a variety of conditions and should not cause physical or digital harm when encountering edge cases or unexpected environmental changes."
+        },
+        {
+            "q": "You are working in Azure Machine Learning and need to perform interactive development, such as writing and testing Python code in a Jupyter Notebook environment. Which compute resource should you provision?",
+            "options": [
+                "Compute Cluster",
+                "Compute Instance",
+                "Datastore",
+                "Dataset"
+            ],
+            "answer": 1,
+            "explanation": "A Compute Instance is a managed cloud-based workstation provided by Azure Machine Learning specifically for development and experimentation. A Compute Cluster is used for large-scale, scalable training jobs."
+        },
+        {
+            "q": "A healthcare provider needs to process large volumes of patient feedback text to identify sensitive information like Social Security Numbers and medical record numbers so they can be redacted before researchers access the data. Which feature of Azure AI Language should be utilized?",
+            "options": [
+                "Sentiment Analysis",
+                "Key Phrase Extraction",
+                "Personally Identizable Information (PII) Detection",
+                "Summarization"
+            ],
+            "answer": 2,
+            "explanation": "The PII detection feature in Azure AI Language is specifically designed to identify and redact sensitive information such as names, addresses, and identification numbers from unstructured text."
+        },
+        {
+            "q": "In an Azure AI Search knowledge mining pipeline, you have successfully connected a data source and created an indexer. You now need to define the set of AI enrichment steps, such as OCR or entity recognition, that will be applied to the documents during ingestion. Which component must you configure?",
+            "options": [
+                "Skillset",
+                "Index Projections",
+                "Search Index",
+                "Data Source"
+            ],
+            "answer": 0,
+            "explanation": "A Skillset in Azure AI Search contains the collection of 'skills' (AI enrichment steps) used to extract, transform, and enrich unstructured data during the indexing process."
+        },
+        {
+            "q": "A security company wants to implement a vision system that can not only identify if a person is present in a video feed but also draw bounding boxes around every detected individual to track their movement across multiple camera angles. Which computer vision task is required?",
+            "options": [
+                "Image Classification",
+                "Object Detection",
+                "Optical Character Recognition (OCR)",
+                "Image Tagging"
+            ],
+            "answer": 1,
+            "explanation": "While Image Classification identifies the presence of an object in an image, Object Detection goes further by identifying the objects and providing their precise locations within the frame using bounding boxes."
+        },
+        {
+            "q": "A logistics company receives thousands of unstructured PDF invoices daily. They need to automatically extract specific key-value pairs such as 'Invoice Date', 'Total Due', and 'VAT Amount' into a structured SQL database. Which Azure AI service is most specialized for this requirement?",
+            "options": [
+                "Azure AI Vision",
+                "Azure AI Document Intelligence",
+                "Azure AI Language",
+                "Azure AI Search"
+            ],
+            "answer": 1,
+            "explanation": "Azure AI Document Intelligence (formerly Form Recognizer) is specifically built to extract text, key-value pairs, tables, and structures from various document types like invoices, receipts, and IDs."
+        }
+    ],
+    "AI Generated Section 1778965309": [
+        {
+            "q": "A machine learning model used for predicting credit risk is found to have significantly higher error rates for applicants from a specific postal code, even when controlling for income and employment history. Which principle of Responsible AI has been most directly violated?",
+            "options": [
+                "Reliability and Safety",
+                "Fairness",
+                "Transparency",
+                "Inclusiveness"
+            ],
+            "answer": 1,
+            "explanation": "The principle of Fairness requires that AI systems should treat all people fairly and avoid bias based on demographic characteristics or proxy variables like postal codes that may correlate with protected groups."
+        },
+        {
+            "q": "You are evaluating a machine learning model designed to detect a highly contagious and dangerous virus. In this specific use case, the cost of a False Negative (failing to identify an infected person) is much higher than the cost of a False Positive. Which evaluation metric should you prioritize to minimize these missed detections?",
+            "options": [
+                "Precision",
+                "R-squared",
+                "Recall",
+                "Mean Absolute Error"
+            ],
+            "answer": 2,
+            "explanation": "Recall (also known as Sensitivity) measures the ability of a model to find all the positive instances. High recall is critical when the goal is to minimize False Negatives, such as in medical diagnosis."
+        },
+        {
+            "q": "An autonomous delivery robot uses a camera to navigate a warehouse. The system must not only identify that 'obstacles' are present but also determine the exact bounding box coordinates for each obstacle to calculate an avoidance path. Which computer vision task is being performed?",
+            "options": [
+                "Image Classification",
+                "Object Detection",
+                "Semantic Segmentation",
+                "Optical Character Recognition"
+            ],
+            "answer": 1,
+            "explanation": "While Image Classification identifies the presence of an object, Object Detection goes a step further by providing the location and bounding box coordinates for each detected object in the image."
+        },
+        {
+            "q": "In an Azure AI Search implementation, you have configured a pipeline that crawls a blob storage container. During the ingestion process, you want to apply a custom Python script that performs complex text transformations on the documents being indexed. Which component of Azure AI Search is responsible for defining these enrichment steps?",
+            "options": [
+                "Indexer",
+                "Index",
+                "Skillset",
+                "Data Source"
+            ],
+            "answer": 2,
+            "explanation": "A Skillset in Azure AI Search contains the collection of 'skills' (AI enrichment steps) that are applied to the documents during the indexing process to extract or transform data."
+        },
+        {
+            "q": "A marketing analyst has a dataset containing millions of customer transactions but no predefined categories for customer types. The goal is to automatically group customers into segments based on similarities in their purchasing frequency and total spend. Which machine learning approach should be used?",
+            "options": [
+                "Supervised Classification",
+                "Unsupervised Clustering",
+                "Regression Analysis",
+                "Reinforcement Learning"
+            ],
+            "answer": 1,
+            "explanation": "Clustering is an unsupervised learning technique used to find natural groupings or patterns in data when there are no pre-existing labels or categories provided."
+        },
+        {
+            "q": "A legal technology company wants to implement a feature that generates summaries of long legal contracts. The requirement is that the system must only select and extract the most important existing sentences from the original text without generating any new words or paraphrasing. Which type of summarization technique is required?",
+            "options": [
+                "Abstractive Summarization",
+                "Extractive Summarization",
+                "Sentiment Analysis",
+                "Entity Recognition"
+            ],
+            "answer": 1,
+            "explanation": "Extractive Summarization works by identifying and pulling out the most relevant sentences directly from the source text. In contrast, Abstractive Summarization generates new text to convey the main idea."
+        },
+        {
+            "q": "A medical imaging application needs to identify the exact pixel-level boundaries of a tumor within an MRI scan to help surgeons plan a precise resection. Which computer vision technique is most suitable for this level of detail?",
+            "options": [
+                "Image Classification",
+                "Object Detection",
+                "Semantic Segmentation",
+                "Text Recognition"
+            ],
+            "answer": 2,
+            "explanation": "Semantic Segmentation involves classifying every single pixel in an image into a specific category (e.g., 'tumor' vs 'healthy tissue'), providing the precise boundaries required for medical precision."
+        }
+    ],
+    "AI Generated Section 1778965512": [
+        {
+            "q": "A marketing agency has a dataset of customer transaction histories but no predefined labels or categories for their customers. They want to group customers into distinct segments with similar buying patterns to create targeted advertising campaigns. Which machine learning approach is most appropriate?",
+            "options": [
+                "Regression",
+                "Classification",
+                "Clustering",
+                "Anomaly Detection"
+            ],
+            "answer": 2,
+            "explanation": "Clustering is an unsupervised learning technique used to group data points into clusters based on similarities without the need for pre-existing labels. Regression and Classification are supervised learning tasks that require labeled data."
+        },
+        {
+            "q": "A security company is developing software for autonomous vehicles. The system must not only identify if there is a 'pedestrian' in the camera feed but also provide the precise coordinates and bounding boxes for every pedestrian, cyclist, and traffic light detected. Which computer vision task is required?",
+            "options": [
+                "Image Classification",
+                "Object Detection",
+                "Semantic Segmentation",
+                "Optical Character Recognition"
+            ],
+            "answer": 1,
+            "explanation": "While Image Classification identifies the presence of an object in an image, Object Detection goes a step further by identifying the objects and providing their specific locations using bounding boxes."
+        },
+        {
+            "q": "During the development of a credit scoring model, a data scientist notices that the model consistently assigns lower scores to applicants from certain zip codes, even when their financial indicators are strong. This is an example of which Responsible AI principle being violated?",
+            "options": [
+                "Transparency",
+                "Fairness",
+                "Reliability and Safety",
+                "Privacy and Security"
+            ],
+            "answer": 1,
+            "explanation": "The Fairness principle dictates that AI systems should treat all people fairly and avoid bias. In this case, the model is exhibiting bias against specific geographic groups, leading to unfair outcomes."
+        },
+        {
+            "q": "You are building an application using Azure OpenAI Service. You notice that when you ask the model about a historical event, it occasionally provides highly confident but factually incorrect details. What is the technical term for this phenomenon?",
+            "options": [
+                "Overfitting",
+                "Hallucination",
+                "Underfitting",
+                "Tokenization"
+            ],
+            "answer": 1,
+            "explanation": "Hallucination refers to a phenomenon in Large Language Models (LLMs) where the model generates text that is fluent and grammatically correct but contains false, nonsensical, or ungrounded information."
+        },
+        {
+            "q": "A logistics company wants to automate the extraction of data from scanned shipping manifests. They need to extract specific fields such as 'Tracking Number', 'Destination City', and 'Weight' into a structured database. Which Azure AI service is most specialized for this task?",
+            "options": [
+                "Azure AI Vision",
+                "Azure AI Document Intelligence",
+                "Azure AI Language",
+                "Azure AI Search"
+            ],
+            "answer": 1,
+            "explanation": "Azure AI Document Intelligence (formerly Form Recognizer) is specifically designed to extract text, key-value pairs, and structured data from documents like invoices, receipts, and forms."
+        },
+        {
+            "q": "A developer needs to implement a system that converts a recorded lecture audio file into a written transcript and then automatically generates a concise summary of the key points discussed. Which combination of Azure AI services would be most efficient?",
+            "options": [
+                "Azure AI Speech and Azure AI Language",
+                "Azure AI Vision and Azure AI Document Intelligence",
+                "Azure AI Custom Vision and Azure AI Search",
+                "Azure OpenAI and Azure AI Search"
+            ],
+            "answer": 0,
+            "explanation": "The workflow requires two steps: first, converting audio to text using Azure AI Speech (Speech-to-Text), and second, processing that text to perform summarization using Azure AI Language."
+        },
+        {
+            "q": "In a machine learning project for detecting fraudulent credit card transactions, the cost of missing a fraudulent transaction (a False Negative) is much higher than the cost of investigating a legitimate transaction flagged as fraud (a False Positive). Which metric should the developer prioritize to minimize missed frauds?",
+            "options": [
+                "Precision",
+                "Accuracy",
+                "Recall",
+                "F1-Score"
+            ],
+            "answer": 2,
+            "explanation": "Recall (also known as Sensitivity) measures the ability of a model to identify all actual positive instances. In fraud detection, high recall is critical because it ensures that the number of False Negatives (missed frauds) is kept to a minimum."
+        }
+    ],
+    "AI Generated Section 1778965762": [
+        {
+            "q": "You are developing a regression model to predict the energy consumption of a smart grid. You want an evaluation metric that heavily penalizes large errors (outliers) in your predictions, as even a single massive miscalculation could lead to significant power outages. Which metric should you prioritize?",
+            "options": [
+                "Mean Absolute Error (MAE)",
+                "Root Mean Squared Error (RMSE)",
+                "R-squared",
+                "Coefficient of Determination"
+            ],
+            "answer": 1,
+            "explanation": "Root Mean Squared Error (RMSE) squares the differences between predicted and actual values before averaging them. This mathematical property means that larger errors have a disproportionately high impact on the final metric, making it ideal for scenarios where penalizing large outliers is critical."
+        },
+        {
+            "q": "A healthcare provider wants to implement an AI solution that processes unstructured clinical notes. The system must identify and categorize specific entities such as 'Patient Names', 'Drug Dosages', and 'Prescribed Dates' into a structured format for a database. Which Natural Language Processing (NLP) task is required?",
+            "options": [
+                "Sentiment Analysis",
+                "Language Detection",
+                "Named Entity Recognition (NER)",
+                "Text Summarization"
+            ],
+            "answer": 2,
+            "explanation": "Named Entity Recognition (NER) is a subtask of NLP that identifies and categorizes key information (entities) in text into predefined categories such as names, organizations, locations, dates, or medical terms."
+        },
+        {
+            "q": "An organization has deployed an AI system to automate loan approvals. To ensure ethical standards, the company establishes a governance framework where human auditors review the model's decision-making logic and take responsibility for any errors made by the automated process. Which principle of Responsible AI is being specifically addressed here?",
+            "options": [
+                "Transparency",
+                "Fairness",
+                "Accountability",
+                "Reliability and Safety"
+            ],
+            "answer": 2,
+            "explanation": "The principle of Accountability dictates that those who design and deploy AI systems must be responsible for how their systems operate. Implementing human oversight and a clear chain of responsibility for the model's outcomes is a direct application of accountability."
+        },
+        {
+            "q": "A data scientist has a large dataset and needs to find the most efficient machine learning algorithm and the optimal set of hyperparameters for a classification task, but they have limited time to manually perform grid searches or trial-and-error. Which Azure Machine Learning feature is most appropriate?",
+            "options": [
+                "Azure Machine Learning Designer",
+                "Automated Machine Learning (AutoML)",
+                "Azure Databricks",
+                "Azure Data Factory"
+            ],
+            "answer": 1,
+            "explanation": "Automated Machine Learning (AutoML) is designed to automate the time-consuming, iterative tasks of model selection and hyperparameter tuning, allowing users to find the best performing model for a specific dataset with minimal manual intervention."
+        },
+        {
+            "q": "You have deployed an image classification model that identifies different types of agricultural crops. You notice that while the model is accurate overall, it frequently misidentifies 'Wheat' as 'Barley' when its confidence is low, leading to incorrect harvest instructions. To reduce these specific False Positives (misidentifications), how should you adjust your deployment strategy?",
+            "options": [
+                "Decrease the confidence threshold",
+                "Increase the confidence threshold",
+                "Switch from Image Classification to Object Detection",
+                "Lower the precision requirement"
+            ],
+            "answer": 1,
+            "explanation": "By increasing the confidence threshold, you require the model to be more certain before it assigns a label. This reduces False Positives (instances where the model incorrectly labels something) at the expense of potentially increasing False Negatives (missing some valid detections)."
+        },
+        {
+            "q": "You are using Azure AI Document Intelligence to process various types of commercial invoices. The goal is to extract specific data points such as 'Invoice ID', 'Vendor Name', and 'Total Due' from documents that have different layouts. Which capability of the service is primarily being utilized?",
+            "options": [
+                "Optical Character Recognition (OCR)",
+                "Key-value pair extraction",
+                "Semantic Segmentation",
+                "Image Classification"
+            ],
+            "answer": 1,
+            "explanation": "While OCR is used to read the text, Key-value pair extraction is the specific capability that identifies the relationship between a label (e.g., 'Invoice ID:') and its corresponding value (e.g., 'INV-12345'), allowing for structured data extraction from unstructured layouts."
+        },
+        {
+            "q": "You are evaluating a machine learning model used for fraud detection in banking. The business requirement is that when the system flags a transaction as 'Fraudulent', it must be extremely certain that the transaction is indeed fraudulent, even if this means some actual fraudulent transactions are not caught. Which metric should you optimize to meet this specific goal?",
+            "options": [
+                "Recall",
+                "Precision",
+                "F1-Score",
+                "Mean Absolute Error"
+            ],
+            "answer": 1,
+            "explanation": "Precision measures the accuracy of positive predictions (the proportion of predicted positives that are actually true). High precision ensures that when the model predicts 'Fraud', it is likely correct, thereby minimizing False Positives, which aligns with the business requirement."
+        }
+    ],
+    "AI Generated Section 1778965947": [
+        {
+            "q": "A logistics company wants to build a machine learning model that predicts the specific number of days a shipment will take to arrive based on distance, weather conditions, and carrier type. Which machine learning workload is most appropriate for this task?",
+            "options": [
+                "Classification",
+                "Regression",
+                "Clustering",
+                "Anomaly Detection"
+            ],
+            "answer": 1,
+            "explanation": "The goal is to predict a continuous numerical value (the number of days). Predicting a specific quantity or measurement is a characteristic of a Regression workload."
+        },
+        {
+            "q": "You are developing a security application that needs to ensure the person presenting an ID card is physically present and not using a high-resolution photograph of another person. Which specific capability within Azure AI Face should you implement?",
+            "options": [
+                "Face Detection",
+                "Face Recognition",
+                "Liveness Detection",
+                "Face Grouping"
+            ],
+            "answer": 2,
+            "explanation": "Liveness detection is a specialized feature designed to distinguish between a real human face and a spoofing attempt (like a photo or video playback) by analyzing physiological cues."
+        },
+        {
+            "q": "A healthcare provider wants to process unstructured clinical notes to automatically identify and extract names of medications, dosages, and patient symptoms. Which Natural Language Processing task is being described?",
+            "options": [
+                "Sentiment Analysis",
+                "Language Detection",
+                "Named Entity Recognition (NER)",
+                "Key Phrase Extraction"
+            ],
+            "answer": 2,
+            "explanation": "Named Entity Recognition (NER) is the process of identifying and categorizing key entities in text into predefined categories such as names, organizations, locations, or in this case, medical terms like medications and symptoms."
+        },
+        {
+            "q": "An autonomous drone company discovers that its navigation AI performs perfectly in sunny weather but frequently crashes during heavy fog because the training dataset lacked foggy-day imagery. Which Responsible AI principle is most directly violated?",
+            "options": [
+                "Fairness",
+                "Reliability and Safety",
+                "Transparency",
+                "Inclusiveness"
+            ],
+            "answer": 1,
+            "explanation": "The Reliability and Safety principle requires that AI systems perform consistently and safely under a wide range of expected conditions. Failure to handle edge cases like heavy fog represents a lack of reliability in safety-critical operations."
+        },
+        {
+            "q": "A financial institution has thousands of scanned PDF invoices. They need to extract specific structured data, such as 'Total Tax Amount', 'Vendor VAT Number', and 'Invoice Date', from these unstructured documents. Which service is best suited for this requirement?",
+            "options": [
+                "Azure AI Vision (OCR)",
+                "Azure AI Document Intelligence (Custom Models)",
+                "Azure AI Language",
+                "Azure AI Search"
+            ],
+            "answer": 1,
+            "explanation": "While Azure AI Vision can perform OCR to extract text, Azure AI Document Intelligence is specifically designed to understand document structures and use custom models to extract specific, labeled fields from complex documents."
+        },
+        {
+            "q": "When configuring an Azure OpenAI model, a developer wants to reduce the randomness of the output so that the model becomes more deterministic and stays focused on the most probable next tokens. Which parameter should they decrease?",
+            "options": [
+                "Top_p",
+                "Temperature",
+                "Max Tokens",
+                "Frequency Penalty"
+            ],
+            "answer": 1,
+            "explanation": "The Temperature parameter controls the randomness of the output. A higher temperature increases creativity and variety, whereas a lower temperature makes the model more deterministic and focused on high-probability tokens."
+        },
+        {
+            "q": "You are evaluating a binary classification model used to detect credit card theft. You observe that the model has a very high number of False Positives (legitimate transactions flagged as theft). Which evaluation metric is specifically being negatively impacted by these False Positives?",
+            "options": [
+                "Recall",
+                "Precision",
+                "F1-Score",
+                "Mean Absolute Error"
+            ],
+            "answer": 1,
+            "explanation": "Precision is calculated as True Positives divided by (True Positives + False Positives). Therefore, an increase in the number of False Positives directly decreases the Precision of the model."
+        }
+    ],
+    "AI Generated Section 1778966162": [
+        {
+            "q": "You are developing an application for a warehouse that needs to not only identify if a box is present in a photo but also provide the exact bounding box coordinates for every item detected within the frame. Which computer vision task must be implemented?",
+            "options": [
+                "Semantic Segmentation",
+                "Object Detection",
+                "Image Classification",
+                "Optical Character Recognition"
+            ],
+            "answer": 1,
+            "explanation": "While image classification identifies what is in an image (the presence of a box), object detection goes a step further by identifying the location of objects using bounding boxes, which provides the coordinates required."
+        },
+        {
+            "q": "An organization wants to extract specific information such as names of people, locations, and dates from a massive collection of unstructured legal documents to populate a database. Which feature of Azure AI Language should be utilized?",
+            "options": [
+                "Named Entity Recognition",
+                "Sentiment Analysis",
+                "Key Phrase Extraction",
+                "Language Detection"
+            ],
+            "answer": 0,
+            "explanation": "Named Entity Recognition (NER) is a Natural Language Processing (NLP) task specifically designed to identify and categorize entities like names, locations, organizations, and dates within unstructured text."
+        },
+        {
+            "q": "In a medical diagnostic model designed to detect a rare but highly treatable disease, the healthcare provider wants to ensure that as few patients as possible are told they are healthy when they actually have the disease. Which metric is most critical for this specific goal?",
+            "options": [
+                "Precision",
+                "R-Squared",
+                "Mean Absolute Error",
+                "Recall"
+            ],
+            "answer": 3,
+            "explanation": "In medical screening where missing a positive case (a False Negative) is dangerous, maximizing Recall is the priority. High recall ensures that most actual positive instances are correctly identified."
+        },
+        {
+            "q": "A company implements an automated hiring tool but fails to provide documentation regarding how the model reaches its decisions or which features were most influential in the selection process. Which principle of Responsible AI is most directly being neglected?",
+            "options": [
+                "Accountability",
+                "Fairness",
+                "Transparency",
+                "Reliability and Safety"
+            ],
+            "answer": 2,
+            "explanation": "The Transparency principle dictates that AI systems should be understandable and that their decision-making processes, including documentation of how they work, should be available to users."
+        },
+        {
+            "q": "You are configuring an Azure AI Search indexer. You want the system to automatically extract text from images found within your PDF documents during the indexing process. Which component of Azure AI Search is responsible for adding this layer of intelligence?",
+            "options": [
+                "Data Source",
+                "Index",
+                "Skillset",
+                "Indexer"
+            ],
+            "answer": 2,
+            "explanation": "A skillset contains the AI enrichment capabilities (such as OCR or image analysis) used during the indexing process to extract and transform data from raw documents."
+        },
+        {
+            "q": "A data scientist has a large dataset and wants to find the most efficient machine learning algorithm and the best set of hyperparameters without manually writing code or designing a visual pipeline. Which feature of Azure Machine Learning should be used?",
+            "options": [
+                "Automated ML (AutoML)",
+                "Designer",
+                "Notebooks",
+                "Pipelines"
+            ],
+            "answer": 0,
+            "explanation": "Automated Machine Learning (AutoML) is designed to automate the time-consuming, iterative tasks of machine learning model development, including algorithm selection and hyperparameter tuning."
+        },
+        {
+            "q": "Your company needs to process thousands of invoices every day. The system must not only read the text but specifically extract key-value pairs like 'Invoice Total', 'Tax Amount', and 'Vendor Name' from unstructured layouts. Which service is best suited for this?",
+            "options": [
+                "Azure AI Vision",
+                "Azure AI Language",
+                "Azure AI Search",
+                "Azure AI Document Intelligence"
+            ],
+            "answer": 3,
+            "explanation": "Azure AI Document Intelligence (formerly Form Recognizer) is specifically built to extract structured data and key-value pairs from various document types like invoices, receipts, and forms."
+        }
+    ],
+    "AI Generated Section 1778966332": [
+        {
+            "q": "A manufacturing company uses a camera system to monitor a production line. The system is required to not only identify if a defective part exists in the frame but also to draw bounding boxes around every detected defect to assist robotic arms in removal. Which computer vision task is being performed?",
+            "options": [
+                "Image Classification",
+                "Object Detection",
+                "Semantic Segmentation",
+                "Optical Character Recognition"
+            ],
+            "answer": 1,
+            "explanation": "While Image Classification identifies the presence of a label in an image, Object Detection goes further by identifying the specific location (using bounding boxes) and the count of objects within the image."
+        },
+        {
+            "q": "A customer support organization wants to automate the extraction of specific entities, such as product names, order numbers, and dates, from a massive stream of incoming support emails. Which Natural Language Processing capability should be utilized?",
+            "options": [
+                "Sentiment Analysis",
+                "Key Phrase Extraction",
+                "Named Entity Recognition (NER)",
+                "Language Detection"
+            ],
+            "answer": 2,
+            "explanation": "Named Entity Recognition (NER) is the specific NLP task used to identify and categorize key elements in text into predefined categories such as names, dates, quantities, and organizations."
+        },
+        {
+            "q": "A retail company has a database of millions of customers but does not have any pre-defined labels or segments for them. They want to discover natural groupings of customers based on similarities in purchasing behavior and browsing history. Which machine learning workload is most appropriate?",
+            "options": [
+                "Regression",
+                "Clustering",
+                "Classification",
+                "Anomaly Detection"
+            ],
+            "answer": 1,
+            "explanation": "Clustering is an unsupervised learning technique used to group data points that share similar characteristics when there are no pre-existing labels or categories provided in the dataset."
+        },
+        {
+            "q": "During the development of a facial recognition system, it was discovered that the model performed significantly worse on individuals with darker skin tones compared to those with lighter skin tones. Which Responsible AI principle is most directly being violated?",
+            "options": [
+                "Fairness",
+                "Reliability and Safety",
+                "Transparency",
+                "Accountability"
+            ],
+            "answer": 0,
+            "explanation": "The principle of Fairness requires that AI systems should treat all people equally and avoid bias. A model that performs differently based on skin tone demonstrates a lack of fairness due to algorithmic bias."
+        },
+        {
+            "q": "You are evaluating a machine learning model designed to detect rare, life-threatening diseases in medical imaging. The cost of a 'False Negative' (failing to detect the disease) is much higher than the cost of a 'False Positive'. Which metric should you prioritize maximizing?",
+            "options": [
+                "Precision",
+                "Accuracy",
+                "Recall",
+                "Mean Absolute Error"
+            ],
+            "answer": 2,
+            "explanation": "Recall (also known as Sensitivity) measures the ability of a model to find all positive instances. In medical scenarios where missing a case is dangerous, maximizing Recall ensures that fewer actual positive cases are missed (minimizing False Negatives)."
+        },
+        {
+            "q": "In an Azure Machine Learning workspace, you need to organize and track multiple iterations of your training process, including the specific hyperparameters used and the resulting performance metrics for each run. Which component should you use?",
+            "options": [
+                "Datasets",
+                "Experiments",
+                "Compute Instances",
+                "Endpoints"
+            ],
+            "answer": 1,
+            "explanation": "In Azure Machine Learning, an 'Experiment' is the logical grouping used to track multiple training runs. Each run within an experiment records the parameters, metrics, and artifacts produced during that specific execution."
+        },
+        {
+            "q": "A developer is building a voice-controlled smart home assistant. The assistant must be able to convert the user's spoken commands into text to process the logic of the command. Which Azure AI service feature is required for this specific step?",
+            "options": [
+                "Speech Synthesis",
+                "Speech-to-Text",
+                "Language Understanding",
+                "Speaker Recognition"
+            ],
+            "answer": 1,
+            "explanation": "Speech-to-Text (also known as Speech Recognition) is the process of converting spoken audio signals into written text, which is the necessary first step for a system to 'read' and interpret a verbal command."
+        }
+    ],
+    "AI Generated Section 1782175444": [
+        {
+            "q": "What is the primary function of Azure AI Search in a logistics use\u2011case?",
+            "options": [
+                "To generate synthetic images for training",
+                "To extract structured information from unstructured documents such as invoices and shipping manifests",
+                "To monitor database replication lag",
+                "To enforce network segmentation policies"
+            ],
+            "answer": 1,
+            "explanation": "It extracts key\u2011value pairs from unstructured documents for downstream analytics."
+        },
+        {
+            "q": "Which Azure capability provides built\u2011in reasoning for classifying text?",
+            "options": [
+                "Azure Cognitive Services \u2013 Sentiment Analysis",
+                "Azure Key Vault",
+                "Azure Virtual Desktop",
+                "Azure Container Instances"
+            ],
+            "answer": 0,
+            "explanation": "Cognitive Services can ingest raw text and output structured classifications."
+        },
+        {
+            "q": "Why is it important to limit model exposure when using a managed language service?",
+            "options": [
+                "To keep the training data private and prevent overfitting",
+                "To ensure only authenticated users can access the model\u2019s output",
+                "To guarantee low latency for inference"
+            ],
+            "answer": 0,
+            "explanation": "Restricted exposure protects sensitive information and reduces the risk of data leakage."
+        },
+        {
+            "q": "In a responsible AI framework, what role do data\u2011subject rights play?",
+            "options": [
+                "They are only relevant for on\u2011premises deployments",
+                "They ensure that personal data is used in ways that respect user consent and legal obligations",
+                "They enable automatic scaling of inference pipelines"
+            ],
+            "answer": 1,
+            "explanation": "Respecting consent and legal constraints is a core principle of responsible AI."
+        },
+        {
+            "q": "Which capability would you select to enforce that only authenticated service principals receive results?",
+            "options": [
+                "Azure API Management with JWT validation",
+                "Azure Cognitive Search policy that restricts indexing to specific identities",
+                "Azure Key Vault with role\u2011based access control",
+                "Azure Container Instances with network policies"
+            ],
+            "answer": 0,
+            "explanation": "Managed identities and token\u2011based authentication enforce granular access control."
+        },
+        {
+            "q": "When evaluating a recommendation engine for safety\u2011critical operations, which metric should you prioritize?",
+            "options": [
+                "Latency of the underlying inference service",
+                "Number of concurrent virtual instances",
+                "Ability to prevent false positives that could cause unsafe actions",
+                "Cost of data ingestion pipelines"
+            ],
+            "answer": 1,
+            "explanation": "Reducing false positives is essential when safety and regulatory compliance are paramount."
+        },
+        {
+            "q": "Which of the following best describes how a managed prompt templating service (e.g., Azure AI Language) can support domain\u2011specific fine\u2011tuning?",
+            "options": [
+                "It replaces the need for any model training at all",
+                "It injects custom embeddings and prompt templates that guide the model on specialized corpora",
+                "It provides a GUI for manually editing weights after training",
+                "It enforces strict network segmentation for the inference VMs"
+            ],
+            "answer": 0,
+            "explanation": "Custom embeddings and prompt templates allow the model to adapt to a specific domain without full retraining."
+        }
+    ],
+    "AI Generated Section 1782175526": [
+        {
+            "q": "Which principle of Responsible AI is most directly neglected when an automated hiring tool lacks transparency in its decision-making process?",
+            "options": [
+                "Fairness",
+                "Reliability and Safety",
+                "Accountability",
+                "Transparency"
+            ],
+            "answer": 3,
+            "explanation": "The Transparency principle demands explainability, which is absent here."
+        },
+        {
+            "q": "In an Azure AI Language deployment, which capability enables extraction of structured data from unstructured invoices?",
+            "options": [
+                "Text Analytics",
+                "Azure AI Document Intelligence",
+                "Computer Vision API",
+                "Form Recognizer"
+            ],
+            "answer": 1,
+            "explanation": "Document Intelligence extracts key-value pairs from documents."
+        },
+        {
+            "q": "For a medical diagnostic model where missing a positive case is costly, which metric maximizes recall?",
+            "options": [
+                "Accuracy",
+                "Precision",
+                "AUC-ROC",
+                "F1 Score"
+            ],
+            "answer": 1,
+            "explanation": "High recall ensures few false negatives in life-critical screening."
+        },
+        {
+            "q": "Which Azure service manages the pipeline that adds OCR and text analysis to PDFs before indexing?",
+            "options": [
+                "Data Source",
+                "Skillset",
+                "Index",
+                "Indexer"
+            ],
+            "answer": 1,
+            "explanation": "Skillset provides the AI enrichment layer for document processing."
+        },
+        {
+            "q": "Which task enables a system to locate multiple objects in a single view and return their exact bounding boxes?",
+            "options": [
+                "Semantic Segmentation",
+                "Image Classification",
+                "Object Detection",
+                "Pose Estimation"
+            ],
+            "answer": 2,
+            "explanation": "Object detection outputs both class and spatial location."
+        },
+        {
+            "q": "Why is it critical to separately log confidence scores alongside each detection when training on highly imbalanced data?",
+            "options": [
+                "Avoid false positives on benign objects",
+                "Reduce training time",
+                "Minimize label requirements",
+                "Improve model interpretability"
+            ],
+            "answer": 1,
+            "explanation": "High confidence reduces unnecessary alerts when positives are rare."
+        },
+        {
+            "q": "Which Azure capability offers an end-to-end vision + language pipeline that can understand documents and answer questions?",
+            "options": [
+                "Azure AI Search",
+                "Azure Cognitive Services",
+                "Azure AI Language Understanding (LU)",
+                "Azure Form Recognizer Skillset"
+            ],
+            "answer": 3,
+            "explanation": "LU combines language model with vision to reason over document content."
+        }
+    ],
+    "AI Generated Section 1782175635": [
+        {
+            "q": "What is the core capability measured by the F1 score in a classification task?",
+            "options": [
+                "Accuracy of true positives over total predictions",
+                "Precision and recall combined into a harmonic mean",
+                "Average precision across all classes",
+                "Perfect calibration of predicted probabilities"
+            ],
+            "answer": 1,
+            "explanation": "F1 balances precision and recall, rewarding models that are both precise and comprehensive."
+        },
+        {
+            "q": "Which Azure service provides built\u2011in AI language understanding capabilities such as entity extraction and sentiment analysis?",
+            "options": [
+                "Azure AI Search",
+                "Azure Machine Learning",
+                "Azure IoT Hub",
+                "Azure Container Registry"
+            ],
+            "answer": 0,
+            "explanation": "Azure AI Search uses AI Models to extract structured entities from documents automatically."
+        },
+        {
+            "q": "In scenarios where missing a disease case as the positive case is highly dangerous, which metric should be prioritized to ensure patients are not missed?",
+            "options": [
+                "Accuracy",
+                "Precision",
+                "Recall",
+                "F1 Score"
+            ],
+            "answer": 1,
+            "explanation": "High recall minimizes false negatives, crucial for screening programs."
+        },
+        {
+            "q": "Why might a data scientist choose to use a multilingual retrieval\u2011augmented generation (RAG) system over monolingual retrieval?",
+            "options": [
+                "It guarantees translation correctness",
+                "It improves retrieval recall across language boundaries",
+                "It reduces the need for labeled data",
+                "It simplifies model deployment"
+            ],
+            "answer": 0,
+            "explanation": "Using cross\u2011lingual representations expands the searchable space to include many more documents."
+        },
+        {
+            "q": "What is a typical business driver for implementing Explainability in AI systems handling personal data?",
+            "options": [
+                "Lower infrastructure costs",
+                "Legal compliance with data\u2011protection regulations",
+                "Guaranteed higher accuracy on all tasks",
+                "Faster model training"
+            ],
+            "answer": 1,
+            "explanation": "Explainability satisfies transparency obligations for data subjects and regulators alike."
+        },
+        {
+            "q": "Which component of Azure Cognitive Services directly enables an agent to interpret visual information such as invoice scans?",
+            "options": [
+                "Form Recognizer",
+                " Computer Vision Vision",
+                " Speech Service",
+                " Text Analytics"
+            ],
+            "answer": 1,
+            "explanation": "Form Recognizer applies OCR plus AI for extracting structured data from images."
+        },
+        {
+            "q": "Why is 'Explainability' considered essential when AI decisions affect critical infrastructure?",
+            "options": [
+                "It reduces the model size significantly",
+                "It builds user trust and supports regulatory audits",
+                "It removes the need for any human oversight",
+                "It guarantees zero false positives"
+            ],
+            "answer": 0,
+            "explanation": "Explainable AI demonstrates how the model reached its conclusion, a key for incident investigation."
+        }
+    ],
+    "AI Generated Section 1782175727": [
+        {
+            "q": "What is the primary purpose of Microsoft Entra ID?",
+            "options": [
+                "File storage",
+                "Identity and access management",
+                "Email hosting",
+                "Project management"
+            ],
+            "answer": 1,
+            "explanation": "Microsoft Entra ID (formerly Azure AD) provides identity and access management for cloud applications, not file storage or project tracking."
+        },
+        {
+            "q": "An AI model is trained on a balanced dataset but will be deployed to production only if its performance reaches a target recall and precision under strict latency constraints. Which metric pair must be monitored to ensure both high recall (to avoid false negatives) and high precision (to avoid false positives)?",
+            "options": [
+                "Accuracy and F1-score",
+                "Precision and Recall",
+                "R-squared and Mean Absolute Error",
+                "ROC-AUC alone"
+            ],
+            "answer": 1,
+            "explanation": "Precision measures the proportion of true positives among predicted positives, while recall counts all actual positives detected. Both are crucial when the cost of missing an event (like a medical condition) is high."
+        },
+        {
+            "q": "A logistics firm wants to identify the exact location and dimensions of every pallet in a container yard from aerial imagery. Which AI capability is most directly applicable?",
+            "options": [
+                "Semantic segmentation",
+                "Image classification",
+                "Object detection",
+                "Optical character recognition"
+            ],
+            "answer": 2,
+            "explanation": "Image classification determines presence versus absence of objects, whereas object detection localizes each instance and provides bounding-box coordinates, matching the requirement."
+        },
+        {
+            "q": "In Azure AI Search, which component adds intelligent layering to index the raw text within scanned documents so that downstream systems can extract structured metadata?",
+            "options": [
+                "Data Source",
+                "Indexer",
+                "Skillset",
+                "Content Explorer"
+            ],
+            "answer": 1,
+            "explanation": "Skillsets contain AI enrichment actions like OCR, language identification, and custom models that transform raw text into structured fields."
+        },
+        {
+            "q": "When building a fraud detection system for financial institutions, why must the model prioritize recall over precision?",
+            "options": [
+                "High precision reduces false positives, protecting innocent customers",
+                "Low latency is mandatory for real-time alerts",
+                "More training data always improves recall",
+                "All of the above"
+            ],
+            "answer": 0,
+            "explanation": "In fraud detection, it's more important to capture every potential case (high recall, avoiding false negatives) than to flag many benign events as suspicious."
+        },
+        {
+            "q": "A startup deploys a large language model (LLM) to generate product descriptions from prompt variations. Which practice best mitigates the risk of hallucinated or factually incorrect outputs?",
+            "options": [
+                "Increasing compute resources",
+                "Using deterministic decoding only with temperature set to zero",
+                "Applying prompt templates and retrieval-augmented generation (RAG)",
+                "Removing all safety filters for completeness"
+            ],
+            "answer": 2,
+            "explanation": "Prompt templates and RAG combine external knowledge retrieval with generation, allowing the system to ground outputs in verified facts rather than pure text generation."
+        },
+        {
+            "q": "You are tasked with classifying emails into one of three categories: Spam, Promo, or Important. What evaluation metric best reflects the balance between precision and recall for this multi-label problem?",
+            "options": [
+                "Accuracy",
+                "F1-score (micro or macro)",
+                "Mean Absolute Deviation",
+                "R-squared"
+            ],
+            "answer": 1,
+            "explanation": "Accuracy is misleading in imbalanced multi-label settings; F1 (harmonic mean of precision and recall) provides a single figure that rewards both high precision and high recall."
+        }
+    ],
+    "AI Generated Section 1782176208": [
+        {
+            "q": "In high\u2011risk screening scenarios where missing a disease case could be catastrophic, which evaluation metric most directly addresses recall?",
+            "options": [
+                "Precision",
+                "Accuracy",
+                "Recall",
+                "F1 Score"
+            ],
+            "answer": 2,
+            "explanation": "Recall emphasizes minimizing false\u2011negative outcomes, which is essential when early detection directly impacts health outcomes."
+        },
+        {
+            "q": "Why would an organization choose Recall over other metrics when false negatives pose a severe safety risk?",
+            "options": [
+                "It maximizes true positives detected while limiting false negatives",
+                "It guarantees zero missed detections without exception",
+                "It improves precision across all contexts equally",
+                "It ensures perfect specificity"
+            ],
+            "answer": 1,
+            "explanation": "High recall ensures the model identifies as many actual disease cases as possible, reducing missed diagnoses that could be harmful."
+        },
+        {
+            "q": "Which metric balances precision and recall, making it the preferred choice when false positives also carry significant consequences?",
+            "options": [
+                "Accuracy",
+                "F1 Score",
+                "Precision\u2011Recall Averaged Accuracy",
+                "Matthews Correlation Coefficient"
+            ],
+            "answer": 1,
+            "explanation": "F1 Score provides the harmonic mean of precision and recall, offering a balanced view for safety\u2011critical decision making."
+        },
+        {
+            "q": "Which AI safety principle emphasizes explaining model outputs to end\u2011users and regulators?",
+            "options": [
+                "Robustness",
+                "Explainability",
+                "Fairness",
+                "Efficiency"
+            ],
+            "answer": 1,
+            "explanation": "Explainability builds trust and fulfills regulatory transparency obligations by making model reasoning interpretable."
+        },
+        {
+            "q": "Why does Recall become more important than accuracy in fraud detection systems?",
+            "options": [
+                "Accuracy penalizes both correctly flagged and missed cases equally",
+                "Fraud detection models must minimize false negatives to prevent large losses",
+                "Accuracy is easier to compute in low\u2011risk environments",
+                "Accuracy improves automatically with more data"
+            ],
+            "answer": 1,
+            "explanation": "In contexts where missing a fraudulent transaction is far costlier than flagging benign ones, maximizing recall for positives is paramount."
+        },
+        {
+            "q": "Which service directly supports visual information interpretation for invoice processing in a bot workflow?",
+            "options": [
+                "Computer Vision Vision",
+                "Text Analytics",
+                "Speech Service",
+                "Form Recognizer"
+            ],
+            "answer": 0,
+            "explanation": "Form Recognizer combines OCR with deep learning to extract structured text from scanned invoices, enabling bots to read them automatically."
+        },
+        {
+            "q": "Why is Explainability especially valuable when AI handles sensitive personal data?",
+            "options": [
+                "It reduces the total inference time dramatically",
+                "It guarantees zero false positives on every prediction",
+                "It satisfies transparency obligations under GDPR and similar frameworks",
+                "It eliminates the need for data storage"
+            ],
+            "answer": 2,
+            "explanation": "Explainable models allow data subjects and auditors to trace decisions that affect them, satisfying rights to explanation under privacy law."
+        }
+    ],
+    "AI Generated Section 1782176295": [
+        {
+            "q": "In scenarios where missing a disease case as the positive case is highly dangerous, which metric should be prioritized to ensure patients are not missed?",
+            "options": [
+                "Precision",
+                "Accuracy",
+                "Recall",
+                "F1 Score"
+            ],
+            "answer": 2,
+            "explanation": "High recall minimizes false negatives, which is essential for screening programs where missing a case must be avoided at all costs."
+        },
+        {
+            "q": "What is a typical business driver for implementing Explainability in AI systems handling personal data?",
+            "options": [
+                "Legal compliance with data\u2011protection regulations",
+                "Faster model training",
+                "Guaranteed higher accuracy on all tasks",
+                "Lower infrastructure costs"
+            ],
+            "answer": 0,
+            "explanation": "Legal compliance requires the system to be transparent enough for regulators and data subjects, especially under GDPR, to demonstrate accountability."
+        },
+        {
+            "q": "Why is 'Explainability' considered essential when AI decisions affect critical infrastructure?",
+            "options": [
+                "It guarantees zero false positives",
+                "It builds user trust and supports regulatory audits",
+                "It reduces the model size significantly",
+                "It removes the need for any human oversight"
+            ],
+            "answer": 1,
+            "explanation": "Explainability provides insight into model reasoning, which is crucial for incident investigation and building stakeholder confidence in safety\u2011critical environments."
+        },
+        {
+            "q": "Which Azure Cognitive Service directly enables an agent to interpret visual information such as invoice scans?",
+            "options": [
+                "Computer Vision Vision",
+                "Text Analytics",
+                "Speech Service",
+                "Form Recognizer"
+            ],
+            "answer": 0,
+            "explanation": "Form Recognizer applies OCR plus AI to extract structured entities from images, which is vital for automated data extraction."
+        },
+        {
+            "q": "Which Azure service provides built\u2011in AI language understanding capabilities such as entity extraction and sentiment analysis?",
+            "options": [
+                "Azure AI Search",
+                "Azure IoT Hub",
+                "Azure Machine Learning",
+                "Azure Container Registry"
+            ],
+            "answer": 0,
+            "explanation": "Azure AI Search uses foundation language models to detect and extract entities from documents with minimal effort."
+        },
+        {
+            "q": "What is a key challenge in deploying AI systems for multilingual support across global operations?",
+            "options": [
+                "Uniform tokenization across all languages",
+                "Consistent hardware requirements",
+                "Handling diverse linguistic structures and idioms",
+                "Avoiding overfitting on low\u2011resource languages"
+            ],
+            "answer": 2,
+            "explanation": "Linguistic diversity introduces ambiguity and variability that can affect model behavior unless the system is explicitly designed for multilingual robustness."
+        },
+        {
+            "q": "In a scenario where an AI model must operate under strict safety constraints, which principle ensures the system can continue functioning safely even when confidence is low?",
+            "options": [
+                "Deterministic fallback to manual control",
+                "Guaranteeing high precision on every input",
+                "Maintaining high recall to prevent unsafe actions",
+                "Eliminating all possible errors"
+            ],
+            "answer": 1,
+            "explanation": "High recall prioritizes missing critical errors, aligning with safety\u2011critical design where missing a hazard could be catastrophic."
         }
     ]
 }

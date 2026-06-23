@@ -1,3 +1,6 @@
+from dotenv import load_dotenv
+load_dotenv()
+
 import tkinter as tk
 from tkinter import ttk, messagebox
 import tkmacosx as tkx

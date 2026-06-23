@@ -131,6 +131,17 @@ class DataManager:
             f.write(f"EXAM_TITLE = \"{exam_tag.upper()}: Endless AI Exam\"\n\n")
             f.write(f"PRACTICE_DATA = {json.dumps(current_data, indent=4)}\n")
 
+    @staticmethod
+    def overwrite_endless_file(exam_tag, new_data):
+        """Completely overwrites the endless file with distilled data."""
+        file_path = DataManager.get_endless_exam_file_path(exam_tag)
+        with open(file_path, "w") as f:
+            f.write(f"# {exam_tag}_endless.py - Distilled & Refined Questions\n\n")
+            f.write(f"EXAM_TAG = \"{exam_tag}\"\n\n")
+            f.write(f"EXAM_TITLE = \"{exam_tag.upper()}: Endless AI Exam (Distilled)\"\n\n")
+            f.write(f"PRACTICE_DATA = {json.dumps(new_data, indent=4)}\n")
+        print(f"Successfully distilled and updated {file_path}")
+
     _question_generator_instance = None
 
     @classmethod
